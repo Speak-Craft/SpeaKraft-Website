@@ -1,0 +1,239 @@
+Several research efforts have been carried out in recent
+years to enhance public speaking and presentation skills using
+technology. However, most existing solutions remain limited
+in scope, often focusing on only a single aspect of delivery
+rather than providing comprehensive and personalized
+feedback. For instance, some platforms are designed to
+provide only general advice or delayed analysis, which does
+not capture the real challenges faced by learners [7]. Such
+systems often fail to address critical aspects of presentation
+delivery, such as filler word usage, time management, pacing,
+loudness control, and non-verbal expressions, all of which are
+essential components of effective communication.
+SPEAKRAFT addresses these gaps by providing an
+integrated training platform that delivers both immediate
+and post-analysis feedback, ensuring a holistic learning
+experience for its users.
+One of the most important and unique aspects of our work
+is its focus on Sri Lankan undergraduates as the primary
+target group. Presentation skills are central to academic and
+professional success for university students, yet existing tools
+are not designed to handle the accentual variations of Sri
+Lankan learners. Most available solutions are trained on
+international datasets, making it difficult for them to
+accurately recognize speech patterns, filler words, or
+emotional cues from local speakers [8]. To overcome this
+limitation, we did not rely on pre-existing datasets. Instead,
+we collected data directly from undergraduates of different
+universities across Sri Lanka and performed manual labeling
+to ensure accuracy. This approach makes SPEAKRAFT
+highly relevant and unique, as it provides tailored feedback
+suited to the communication style and challenges faced by Sri
+Lankan learners.
+Filler word detection represents another critical
+component of our system. While prior research has
+acknowledged the negative effects of filler words such as
+“um”
+, “ah”
+, “like”
+, “you know” and similar expressions,
+very few existing tools provide targeted mechanisms to reduce
+them [9]. Excessive filler word usage can diminish clarity,
+reduce credibility, and disrupt the overall flow of speech,
+particularly in academic presentations [10]. Using feature
+extraction techniques such as MFCCs combined with machine
+learning classifiers, SPEAKRAFT identifies filler words,
+provides speakers with reports, and provide structured
+exercises for practice. This ensures that students not only
+become aware of their filler word patterns but also learn
+practical strategies to reduce them over time with progress
+tracking.
+Another area where existing solutions show limitations is
+in evaluating loudness variations. Research in acoustic
+modeling highlights the importance of analyzing loudness and
+clarity at the word or sentence level, as proper vocal projection
+plays a major role in keeping audiences engaged [11] [12].
+Despite this, most platforms fail to provide actionable
+feedback on this aspect. SPEAKRAFT incorporates loudness
+tracking across an entire presentation and provides
+personalized exercises aimed at improving vocal control and
+projection, making the training process both comprehensive
+and practical.
+In addition, speech pacing is a key challenge for many
+learners [13] [14]. While prior experiments using words-per-
+minute (WPM) analysis and MFCC features have shown
+potential in identifying unusually slow or fast speaking rates,
+they often fail to account for natural pauses, breathing
+patterns, and rhythm. This results in incomplete feedback for
+speakers. To overcome this, SPEAKRAFT integrates real-
+time pace monitoring with pause detection, allowing users to
+balance fluency, rhythm, and clarity during delivery.
+Non-verbal communication has also received attention in
+prior studies, with research confirming the importance of
+facial expressions, micro-expressions, and emotional cues in
+effective presentations [15] [16]. Advances in affective
+computing and facial emotion recognition technologies, such
+as OpenCV and DeepFace, have made it possible to analyze
+these aspects. Yet, such methods are rarely applied to
+presentation training platforms. SPEAKRAFT integrates
+these techniques into its framework, providing immediate,
+emotion-sensitive feedback that helps learners become more
+expressive, confident, and engaging speakers.
+Taken together, previous studies have made important
+contributions to speech analysis, pacing, and emotion
+recognition [17]. However, limitations remain in
+personalization, multimodal integration, and practical
+exercises for Sri Lankan Undergraduates [18]. SPEAKRAFT
+is specifically designed to overcome these challenges by
+combining filler word detection, loudness monitoring,
+speech pacing analysis, and facial expression recognition
+into a single, integrated framework tailored to Sri Lankan
+undergraduates. By leveraging a manually collected and
+labeled local dataset, SPEAKRAFT offers accuracy and
+cultural relevance that existing international solutions cannot
+provide. Through its real-time feedback and structured
+training activities, the platform creates a comprehensive and
+interactive environment, empowering undergraduates to
+develop stronger, clearer, and more confident presentation
+skills that directly support their academic and professional
+success.
+
+
+references
+[7] E. Darsih, D. Suherdi and S. Safrina, "Technology Integration in
+Public Speaking Classroom: Is It Effective?," in Proceedings of the
+1st International Conference on Science and Technology for the
+Internet of Things (ICSTI 2018), Yogyakarta, Indonesia, 2019.
+[8] M. Chollet, H. Prendinger and S. Scherer, "Native vs. non-native
+language fluency implications on multimodal interaction for
+interpersonal skills training," in Proceedings of the 18th ACM
+International Conference on Multimodal Interaction, Tokyo, Japan,
+2016.
+[9] E. Darsih, D. Suherdi and S. Safrina, "Technology Integration in
+Public Speaking Classroom: Is It Effective?," in Proceedings of the
+1st International Conference on Science and Technology for the
+Internet of Things (ICSTI 2018), Yogyakarta, Indonesia, 2019.
+[10] D. R. Seals and M. E. Coppock, "We, um, have, like, a problem:
+excessive use of fillers in scientific speech," Advances in Physiology
+Education, vol. 46, no. 4, 2022.
+[11] L. A. Guthrie and C. L. Mackersie, "A comparison of presentation
+levels to maximize word recognition scores," Journal of the
+American Academy of Audiology, 2009.
+[12] F. Haider, L. Cerrato, N. Campbell and S. Luz, "Presentation quality
+assessment using acoustic information and hand movements," in
+2016 IEEE International Conference on Acoustics, Speech and
+Signal Processing (ICASSP), 2016.
+[13] S. Seitz, "Pacing effects on performance of an automated task,"
+Psychological Reports, 1969.
+[14] K. J. Whittington, D. P. Bills and L. W. Hill, "Implementation of
+alternative pacing in an introductory programming sequence," in
+Proceedings of the 4th Conference on Information Technology
+Curriculum (CITC4), 2003.
+[15] A. Štěpánková, "Emotions in non-verbal communication at pre-
+election debates: a review of resources on the importance of
+politicians’ mimics at TV political debates and other forms of media
+messages," The Journal of International Communication, 2020.
+[16] Z. Pi, M. Chen, F. Zhu, J. Yang and W. Hu, "Modulation of
+instructor’s eye gaze by facial expression in video lectures,"
+Innovations in Education and Teaching International, vol. 59, 2020.
+[17] R. Manor, "An analysis of a speech," 1976.
+[18] R. Hanifa and S. R. Yusra, "Insight on delivering oral presentation:
+Preparations, problems, and solutions," The International Journal of
+Learning, 2018.
+
+
+
+background literature
+Existing research highlights the importance of effective presentation skills as a core
+competency in higher education, with numerous studies linking strong communication
+abilities to improved academic performance and employability. Traditional training
+methods often rely on lecturer or peer feedback, which, while valuable, can be
+inconsistent, subjective, and difficult to scale for large student cohorts. Recent advances
+in AI-driven communication training, such as speech recognition and facial expression
+analysis tools, have demonstrated promise in providing automated, data-driven feedback.
+However, most of these systems are developed in Western contexts and face significant
+limitations when applied to Asian learners, particularly due to challenges in accent
+recognition and cultural adaptation. This gap in localized, intelligent training tools
+underscores the need for tailored solutions like SPEAKRAFT, which integrates
+multimodal AI to address both linguistic and cultural nuances of Sri Lankan
+undergraduates.
+Presentation Skills in Educational Contexts
+Presentation skills have long been recognized as a core competency in undergraduate
+education, directly influencing academic performance, employability, and professional
+success. Effective oral communication contributes not only to knowledge transfer but also
+to critical thinking, confidence building, and leadership development. However,
+numerous studies have highlighted persistent challenges faced by students, including
+performance anxiety, lack of structured guidance, and limited access to consistent
+feedback during practice. In the Sri Lankan context, these issues are further compounded
+3
+by traditional classroom approaches that emphasize content delivery over communication
+training, leaving many undergraduates underprepared for academic and workplace
+presentations.
+Global Approaches to AI-Assisted Communication Training
+In recent years, AI-powered solutions for communication training have gained
+prominence. Platforms such as Orai, Yoodli, and VirtualSpeech employ natural language
+processing (NLP) and speech recognition to evaluate aspects such as speech clarity,
+pacing, filler word usage, and confidence levels. Similarly, emotion detection tools using
+facial recognition and affective computing provide insights into non-verbal
+communication. These systems have demonstrated effectiveness in improving learners’
+delivery through data-driven, personalized feedback. However, most of these applications
+are designed for Western contexts, primarily recognizing American or British English
+accents, which limits their adaptability for Asian learners.
+Challenges in Local Context
+While global AI-based communication trainers offer robust features for analyzing speech
+pace, their effectiveness is limited when applied to Sri Lankan learners. Most of these
+tools are designed and trained on datasets featuring American or British English accents,
+making them less accurate in recognizing local pronunciation, intonation, and rhythm
+patterns. This results in transcription errors, misinterpretation of pause durations, and
+inaccurate pacing metrics.
+Additionally, these systems often fail to account for culturally specific speech patterns,
+including common hesitations, filler words, and rhythmic variations typical in Sri Lankan
+English. Consequently, learners receive feedback that is sometimes irrelevant or
+misleading, reducing the practical value of the training. Such limitations highlight the
+need for localized AI models capable of accurately assessing speech pace within the
+linguistic and cultural context of Sri Lankan undergraduates, ensuring meaningful and
+actionable feedback.
+Technological Solutions in Presentation skills Training
+Advancements in artificial intelligence, particularly in speech recognition and computer
+vision, provide an opportunity to design intelligent, localized presentation trainers.
+4
+Whisper API, for example, has shown promise in recognizing diverse accents with greater
+accuracy, while OpenCV and DeepFace frameworks enable real-time tracking of facial
+expressions and emotional cues. These technologies can be combined with interactive
+web platforms to deliver multimodal feedback covering both verbal and non-verbal
+aspects of communication. By integrating features such as filler word detection, pace
+management, loudness monitoring, and emotion analysis, an AI-powered system can
+offer holistic training tailored to Sri Lankan learners.
+Motivation for SPEAKRAFT
+To address the limitations of existing systems and meet the unique needs of Sri Lankan
+undergraduates, this research introduces SPEAKRAFT, an AI-powered virtual trainer
+specifically designed for presentation skill development. Unlike Western-centric
+platforms, SPEAKRAFT is tailored to handle local linguistic and cultural contexts while
+offering real-time, personalized coaching. The system integrates four core components
+that together provide a comprehensive training environment:
+• Filler Word Detection and Time Management: Frequent reliance on filler
+words such as “um” and “ah” often disrupts the fluency of presentations.
+SPEAKRAFT detects these instances in real time and provides a quantitative
+measure of usage. Alongside this, the system incorporates time management tools,
+helping students allocate speaking time across sections of their presentation and
+avoid rushing or exceeding allotted durations.
+• Detection of Incomplete Words and Loudness Variation: Many students
+struggle with clarity in pronunciation, often leaving words incomplete or speaking
+at inconsistent volume levels. SPEAKRAFT identifies incomplete word patterns
+and monitors vocal loudness, offering targeted feedback to maintain clarity,
+audibility, and consistent delivery throughout the speech.
+• Speech Pace Management: Speaking too quickly can overwhelm audiences,
+while slow pacing can reduce engagement. By analyzing speech rate, pauses and
+other features, SPEAKRAFT guides students to maintain an optimal pace,
+providing visual indicators and practice exercises that enhance audience
+comprehension and attention.
+• Facial Expression Analysis: Non-verbal communication is equally vital in
+effective presentations. Using computer vision and emotion recognition
+frameworks, SPEAKRAFT tracks facial expressions and evaluates whether they
+align with the emotional tone of the content. This ensures presenters engage their
+5
+audience not only verbally but also through expressive delivery.
+By combining these components in an integrated platform, SPEAKRAFT bridges the gap
+between global technological innovations and local educational needs. It empowers Sri
+Lankan undergraduates to practice, receive constructive feedback, and progressively
+enhance their presentation confidence and competence.
