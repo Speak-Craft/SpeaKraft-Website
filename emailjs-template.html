@@ -1,0 +1,76 @@
+<!-- EmailJS Template for SpeaKraft Contact Form -->
+<!-- Copy this template into your EmailJS dashboard -->
+
+<div style="font-family: system-ui, sans-serif, Arial; font-size: 12px">
+  <div style="color: #2c3e50; font-size: 18px; font-weight: bold; margin-bottom: 10px;">
+    New Contact Form Message - {{subject}}
+  </div>
+  <div style="color: #7f8c8d; font-size: 14px; margin-bottom: 20px;">
+    A message from {{from_name}} has been received. Kindly respond at your earliest convenience.
+  </div>
+  
+  <div
+    style="
+      margin-top: 20px;
+      padding: 15px 0;
+      border-width: 1px 0;
+      border-style: dashed;
+      border-color: lightgrey;
+    "
+  >
+    <table role="presentation" style="width: 100%;">
+      <tr>
+        <td style="vertical-align: top; width: 60px;">
+          <div
+            style="
+              padding: 6px 10px;
+              margin: 0 10px;
+              background-color: aliceblue;
+              border-radius: 5px;
+              font-size: 26px;
+              text-align: center;
+            "
+            role="img"
+          >
+            👤
+          </div>
+        </td>
+        <td style="vertical-align: top;">
+          <div style="color: #2c3e50; font-size: 16px; margin-bottom: 5px;">
+            <strong>{{from_name}}</strong>
+          </div>
+          <div style="color: #7f8c8d; font-size: 13px; margin-bottom: 10px;">
+            From: {{from_email}}
+          </div>
+          <div style="color: #7f8c8d; font-size: 13px; margin-bottom: 15px;">
+            Subject: {{subject}}
+          </div>
+          <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #3498db;">
+            <p style="font-size: 16px; margin: 0; line-height: 1.5;">{{message}}</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+  <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #ecf0f1; color: #95a5a6; font-size: 11px;">
+    This message was sent from the SpeaKraft website contact form.<br>
+    Reply directly to: {{from_email}}
+  </div>
+</div>
+
+<!-- 
+Template Variables Used:
+- {{from_name}} - Sender's name
+- {{from_email}} - Sender's email address
+- {{subject}} - Email subject
+- {{message}} - Email message
+- {{to_email}} - Recipient email (SpeaKraft2025@gmail.com)
+
+Instructions:
+1. Copy this HTML template into your EmailJS dashboard
+2. Create a new template in EmailJS
+3. Paste this code in the template editor
+4. Save the template and note down the Template ID
+5. Update the configuration with your Template ID and Public Key
+-->
