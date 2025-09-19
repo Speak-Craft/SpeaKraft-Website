@@ -19,7 +19,7 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 20);
       
       // Update active section based on scroll position
-      const sections = ['home', 'research-problem', 'methodology', 'milestones', 'downloads', 'about', 'contact'];
+      const sections = ['home', 'literature-survey', 'research-gap', 'research-problem', 'research-objectives', 'methodology', 'tools-technology', 'milestones', 'downloads', 'about', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -52,7 +52,7 @@ const Navigation = () => {
     { label: 'Research Problem & Solution', id: 'research-problem' },
     { label: 'Research Objectives', id: 'research-objectives' },
     { label: 'Methodology', id: 'methodology' },
-    { label: 'Tools and Technology Used', id: 'tools-technology' },
+    { label: 'Tools & Technology', id: 'tools-technology' },
   ];
 
   const downloadsItems = [
