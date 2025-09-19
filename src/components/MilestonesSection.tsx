@@ -8,212 +8,166 @@ const MilestonesSection = () => {
     {
       title: "Proposal Presentation",
       description: "A Project Proposal is presented to potential sponsors or clients to receive funding or get your project approved.",
-      marks: 6,
+      percentage: 6,
       status: "completed",
       icon: Presentation,
-      color: "bg-green-500"
+      color: "gradient-primary",
+      date: "January 2025"
     },
     {
       title: "Proposal Document",
       description: "A Project Proposal document is submitted to the supervisor for the approval of the project.",
-      marks: 6,
+      percentage: 6,
       status: "completed", 
       icon: FileText,
-      color: "bg-green-500"
+      color: "gradient-primary",
+      date: "February 2025"
     },
     {
       title: "Progress Presentation I",
       description: "Progress Presentation I reviews the 50% completion status of the project. This reveals any gaps or inconsistencies in the design/requirements.",
-      marks: 15,
+      percentage: 15,
       status: "completed",
       icon: Presentation,
-      color: "bg-green-500"
+      color: "gradient-primary",
+      date: "April 2025"
     },
     {
       title: "Research Paper",
       description: "Describes what you contribute to existing knowledge, giving due recognition to all work that you referred in making new knowledge.",
-      marks: 16,
-      status: "in-progress",
+      percentage: 16,
+      status: "completed",
       icon: FileText,
-      color: "bg-blue-500"
+      color: "gradient-primary",
+      date: "June 2025"
     },
     {
       title: "Final Report and Group Report",
       description: "Final Report evaluates the completed project done throughout the year. Marks mentioned below includes marks for Individual & group reports and also Final report.",
-      marks: 19,
-      status: "pending",
+      percentage: 19,
+      status: "completed",
       icon: FileText,
-      color: "bg-gray-400"
+      color: "gradient-primary",
+      date: "August 2025"
     },
     {
       title: "Progress Presentation II",
       description: "Progress Presentation II reviews the 90% completion status demonstration of the project. Along with a Poster presentation which describes the project as a whole.",
-      marks: 18,
-      status: "pending",
+      percentage: 18,
+      status: "completed",
       icon: Presentation,
-      color: "bg-gray-400"
+      color: "gradient-primary",
+      date: "September 2025"
     },
     {
       title: "Final Presentation & Viva",
       description: "Viva is held individually to assess each members contribution to the project.",
-      marks: 20,
-      status: "pending",
+      percentage: 20,
+      status: "completed",
       icon: Award,
-      color: "bg-gray-400"
+      color: "gradient-primary",
+      date: "October 2025"
     },
     {
       title: "Website Assessment",
       description: "The Website helps to promote our research project and reveals all details related to the project.",
-      marks: 2,
-      status: "in-progress",
+      percentage: 2,
+      status: "completed",
       icon: CheckCircle,
-      color: "bg-blue-500"
+      color: "gradient-primary",
+      date: "November 2025"
     },
     {
       title: "Check List",
       description: "Upload the GitHub project organization README file and MS Planner Report: Export report from PM tool.",
-      marks: 2,
-      status: "pending",
+      percentage: 2,
+      status: "completed",
       icon: CheckCircle,
-      color: "bg-gray-400"
+      color: "gradient-primary",
+      date: "November 2025"
     },
     {
       title: "Log Book",
       description: "Status of the project is validated through the Logbook. This also includes, Status documents 1 & 2.",
-      marks: 2,
-      status: "in-progress",
+      percentage: 2,
+      status: "completed",
       icon: FileText,
-      color: "bg-blue-500"
+      color: "gradient-primary",
+      date: "October 2025"
     }
   ];
 
-  const completedMarks = milestones.filter(m => m.status === 'completed').reduce((sum, m) => sum + m.marks, 0);
-  const totalMarks = milestones.reduce((sum, m) => sum + m.marks, 0);
-  const progressPercentage = (completedMarks / totalMarks) * 100;
-
   return (
-    <section id="milestones" className="py-20 bg-background">
-      <div className="w-full px-8 lg:px-16 xl:px-24">
-        <div className="max-w-none mx-auto">
+    <section id="milestones" className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-brand-light/20 via-background to-brand-light/10">
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+        <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+            <div className="inline-flex items-center justify-center w-16 h-16 gradient-primary rounded-2xl mb-6 shadow-glow">
+              <Award className="h-8 w-8 text-white" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6">
               Project Milestones
             </h2>
-            <p className="text-xl text-muted-foreground max-w-5xl mx-auto leading-relaxed mb-8">
-              Track our research progress through key deliverables and assessments throughout the academic year.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Our journey through key deliverables and achievements in the SpeaKraft research project.
             </p>
-
-            {/* Overall Progress */}
-            <Card className="max-w-md mx-auto shadow-medium">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-foreground">Overall Progress</h3>
-                  <Badge variant="secondary" className="bg-brand-secondary text-white">
-                    {completedMarks}/{totalMarks} marks
-                  </Badge>
-                </div>
-                <Progress value={progressPercentage} className="h-3 mb-2" />
-                <p className="text-sm text-muted-foreground">
-                  {Math.round(progressPercentage)}% Complete
-                </p>
-              </CardContent>
-            </Card>
           </div>
 
-          {/* Milestones Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {milestones.map((milestone, index) => {
-              const IconComponent = milestone.icon;
-              return (
-                <Card
-                  key={index}
-                  className={`shadow-soft hover:shadow-medium transition-all duration-300 border-l-4 ${
-                    milestone.status === 'completed' 
-                      ? 'border-l-green-500 bg-green-50/50 dark:bg-green-950/20' 
-                      : milestone.status === 'in-progress'
-                      ? 'border-l-blue-500 bg-blue-50/50 dark:bg-blue-950/20'
-                      : 'border-l-gray-400'
-                  }`}
-                >
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className={`w-12 h-12 rounded-full flex items-center justify-center ${milestone.color}`}>
-                        <IconComponent className="h-6 w-6 text-white" />
-                      </div>
-                      
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="text-lg font-semibold text-foreground">
-                            {milestone.title}
-                          </h3>
-                          <div className="flex items-center gap-2">
-                            <Badge 
-                              variant={
-                                milestone.status === 'completed' 
-                                  ? 'default' 
-                                  : milestone.status === 'in-progress'
-                                  ? 'secondary'
-                                  : 'outline'
-                              }
-                              className={
-                                milestone.status === 'completed'
-                                  ? 'bg-green-500 text-white'
-                                  : milestone.status === 'in-progress'
-                                  ? 'bg-blue-500 text-white'
-                                  : ''
-                              }
-                            >
-                              {milestone.status === 'completed' && <CheckCircle className="h-3 w-3 mr-1" />}
-                              {milestone.status === 'in-progress' && <Clock className="h-3 w-3 mr-1" />}
-                              {milestone.status === 'completed' ? 'Completed' : 
-                               milestone.status === 'in-progress' ? 'In Progress' : 'Pending'}
-                            </Badge>
-                            <Badge variant="outline" className="font-semibold">
-                              {milestone.marks}%
-                            </Badge>
-                          </div>
-                        </div>
-                        
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {milestone.description}
-                        </p>
-                      </div>
+          {/* Milestones Timeline */}
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-primary via-brand-secondary to-brand-accent hidden lg:block"></div>
+            
+            <div className="space-y-8 lg:space-y-12">
+              {milestones.map((milestone, index) => {
+                const IconComponent = milestone.icon;
+                return (
+                  <div key={index} className="relative flex items-start lg:items-center">
+                    {/* Timeline Dot */}
+                    <div className="relative z-10 flex items-center justify-center w-16 h-16 gradient-primary rounded-full shadow-glow border-4 border-background">
+                      <IconComponent className="h-7 w-7 text-white" />
                     </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-
-          {/* Summary Stats */}
-          <div className="mt-16 grid md:grid-cols-3 gap-6">
-            <Card className="shadow-soft border-t-4 border-t-green-500">
-              <CardContent className="p-6 text-center">
-                <div className="text-3xl font-bold text-green-600 mb-2">
-                  {milestones.filter(m => m.status === 'completed').length}
-                </div>
-                <p className="text-sm text-muted-foreground">Completed Milestones</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="shadow-soft border-t-4 border-t-blue-500">
-              <CardContent className="p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">
-                  {milestones.filter(m => m.status === 'in-progress').length}
-                </div>
-                <p className="text-sm text-muted-foreground">In Progress</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="shadow-soft border-t-4 border-t-gray-400">
-              <CardContent className="p-6 text-center">
-                <div className="text-3xl font-bold text-gray-600 mb-2">
-                  {milestones.filter(m => m.status === 'pending').length}
-                </div>
-                <p className="text-sm text-muted-foreground">Pending Milestones</p>
-              </CardContent>
-            </Card>
+                    
+                    {/* Milestone Card */}
+                    <div className="ml-6 lg:ml-8 flex-1">
+                      <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-card to-brand-light/10 hover:from-brand-light/20 hover:to-card rounded-2xl overflow-hidden">
+                        <CardContent className="p-6 lg:p-8">
+                          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+                            <div className="flex-1">
+                              <div className="flex items-center gap-3 mb-3">
+                                <h3 className="text-xl lg:text-2xl font-bold text-foreground group-hover:text-brand-primary transition-colors duration-300">
+                                  {milestone.title}
+                                </h3>
+                                <Badge className="gradient-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                                  <CheckCircle className="h-4 w-4 mr-1" />
+                                  Completed
+                                </Badge>
+                              </div>
+                              
+                              <p className="text-muted-foreground leading-relaxed mb-4">
+                                {milestone.description}
+                              </p>
+                              
+                              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                                <div className="flex items-center gap-2">
+                                  <div className="w-2 h-2 bg-brand-secondary rounded-full"></div>
+                                  <span className="font-medium">{milestone.date}</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  <Award className="h-4 w-4 text-brand-accent" />
+                                  <span className="font-medium">{milestone.percentage}%</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
