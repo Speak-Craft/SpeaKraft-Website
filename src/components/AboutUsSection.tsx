@@ -44,7 +44,7 @@ const AboutUsSection = () => {
       location: "Malabe, Sri Lanka",
       email: "chathura.p@my.sliit.lk",
       linkedin: "#",
-      image: null
+      image: "/src/assets/chathura.jpg"
     },
     {
       name: "Dileeka Boralugoda",
@@ -53,16 +53,16 @@ const AboutUsSection = () => {
       location: "Malabe, Sri Lanka",
       email: "dileeka.b@my.sliit.lk",
       linkedin: "#",
-      image: null
+      image: "/src/assets/dileeka.jpg"
     },
     {
       name: "Sammani Vishara",
       department: "Department of Information Technology",
       institution: "Sri Lanka Institute of Information Technology", 
       location: "Malabe, Sri Lanka",
-      email: "sammani.v@my.sliit.lk",
+      email: "sammanivishara@gmail.com",
       linkedin: "#",
-      image: null
+      image: "/src/assets/Sammani.jpg"
     },
     {
       name: "Avishka Perera",
@@ -71,7 +71,7 @@ const AboutUsSection = () => {
       location: "Malabe, Sri Lanka", 
       email: "avishka.p@my.sliit.lk",
       linkedin: "#",
-      image: null
+      image: "/src/assets/avishka.jpg"
     }
   ];
 
@@ -82,7 +82,7 @@ const AboutUsSection = () => {
       <CardContent className="p-6">
         <div className="text-center">
           {/* Profile Image Placeholder */}
-          <div className={`w-24 h-24 mx-auto mb-4 rounded-full flex items-center justify-center ${
+          <div className={`w-32 h-32 mx-auto mb-4 rounded-full flex items-center justify-center ${
             isLeader ? 'bg-gradient-primary' : 'bg-gradient-accent'
           }`}>
             {person.image ? (
@@ -92,7 +92,7 @@ const AboutUsSection = () => {
                 className="w-full h-full object-cover rounded-full"
               />
             ) : (
-              <User className="h-12 w-12 text-white" />
+              <User className="h-16 w-16 text-white" />
             )}
           </div>
           
@@ -183,32 +183,6 @@ const AboutUsSection = () => {
                   Our interdisciplinary approach combines expertise in Information Technology and Data Science to create 
                   culturally relevant, AI-powered solutions that enhance the learning experience for Sri Lankan university students.
                 </p>
-                
-                <div className="grid md:grid-cols-3 gap-8 mt-12">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold text-2xl">6</span>
-                    </div>
-                    <h4 className="font-semibold text-foreground mb-2">Team Members</h4>
-                    <p className="text-sm text-muted-foreground">Dedicated researchers and developers</p>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold text-2xl">2</span>
-                    </div>
-                    <h4 className="font-semibold text-foreground mb-2">Departments</h4>
-                    <p className="text-sm text-muted-foreground">IT and Data Science expertise</p>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold text-2xl">1</span>
-                    </div>
-                    <h4 className="font-semibold text-foreground mb-2">Vision</h4>
-                    <p className="text-sm text-muted-foreground">Transform presentation training</p>
-                  </div>
-                </div>
               </div>
             </CardContent>
           </Card>
