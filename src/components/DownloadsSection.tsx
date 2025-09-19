@@ -8,7 +8,7 @@ const DownloadsSection = () => {
     {
       title: "Topic Assessment",
       type: "PDF Document",
-      date: "2024-12-09",
+      date: "2024-03-15",
       size: "2.5 MB",
       driveLink: "https://drive.google.com/drive/folders/1dBtAM9tTj7ts4n59MIhVk52veXjZr8Pw?usp=drive_link",
       category: "group"
@@ -16,7 +16,7 @@ const DownloadsSection = () => {
     {
       title: "Project Proposal",
       type: "PDF Document", 
-      date: "2025-02-05",
+      date: "2024-04-20",
       size: "3.2 MB",
       driveLink: "https://drive.google.com/drive/folders/1eEPw7RdDipM3OBO95LKIv-o31_IBnr_6?usp=sharing",
       category: "individual"
@@ -24,7 +24,7 @@ const DownloadsSection = () => {
     {
       title: "Research Paper",
       type: "PDF Document",
-      date: "2025-06-23",
+      date: "2024-10-15",
       size: "4.8 MB", 
       driveLink: "https://drive.google.com/drive/folders/10GiEw-bz8dDC83vre71l3-Ejo0qbnAG-?usp=sharing",
       category: "group"
@@ -32,7 +32,7 @@ const DownloadsSection = () => {
     {
       title: "Final Report",
       type: "PDF Document",
-      date: "2025-08-29",
+      date: "2024-11-30",
       size: "2.8 MB",
       driveLink: "https://drive.google.com/drive/folders/1t_R5JL4YObDbnrML8Dz2yN-ZsaLmGNEF?usp=sharing",
       category: "group"
@@ -40,7 +40,7 @@ const DownloadsSection = () => {
     {
       title: "Final Report",
       type: "PDF Document",
-      date: "2025-08-29", 
+      date: "2024-11-30", 
       size: "1.7 MB",
       driveLink: "https://drive.google.com/drive/folders/1lx0XNrhRMlh_boZ4SQ47JW1o7WQyydbK?usp=sharing",
       category: "individual"
@@ -48,7 +48,7 @@ const DownloadsSection = () => {
     {
       title: "Log Book",
       type: "PDF Document",
-      date: "2025-10-31",
+      date: "2024-12-10",
       size: "TBD",
       driveLink: "https://drive.google.com/drive/folders/1MpwKLgsenJdQl3AXL_ugwGD4kebtTe18?usp=sharing",
       category: "group"
@@ -59,7 +59,7 @@ const DownloadsSection = () => {
     {
       title: "Project Proposal",
       type: "PowerPoint Presentation",
-      date: "2025-01-27",
+      date: "2024-04-25",
       size: "8.3 MB",
       driveLink: "https://drive.google.com/drive/folders/1LLXiHP3lUQlCdl0G7d21P_YC3o0MLi5t?usp=sharing",
       category: "group"
@@ -67,7 +67,7 @@ const DownloadsSection = () => {
     {
       title: "Progress Presentation I",
       type: "PowerPoint Presentation",
-      date: "2025-04-08",
+      date: "2024-07-18",
       size: "14.5 MB",
       driveLink: "https://drive.google.com/drive/folders/1H4imTVNQAIaYDe2V1GxwrDfXDkI2_g0i?usp=sharing",
       category: "group"
@@ -75,7 +75,7 @@ const DownloadsSection = () => {
     {
       title: "Progress Presentation II",
       type: "PowerPoint Presentation",
-      date: "2025-09-16",
+      date: "2024-10-28",
       size: "27.3 MB",
       driveLink: "https://drive.google.com/drive/folders/1Zvma_UOSziXTEShBK2RYF0XrMc8Q8SbG?usp=sharing",
       category: "group"
@@ -83,7 +83,7 @@ const DownloadsSection = () => {
     {
       title: "Final Presentation",
       type: "PowerPoint Presentation",
-      date: "2025-10-28",
+      date: "2024-12-05",
       size: "TBD",
       driveLink: "https://drive.google.com/drive/folders/1kDOJEyeC3hoDjzTWGVSiuKe0kmJh6ICC?usp=sharing",
       category: "group"
@@ -91,7 +91,7 @@ const DownloadsSection = () => {
   ];
 
   const DownloadCard = ({ item, icon: Icon }: { item: typeof documents[0], icon: any }) => (
-    <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-white to-gray-50/50 hover:from-brand-primary/5 hover:to-brand-secondary/5 rounded-2xl overflow-hidden">
+    <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-card hover:from-brand-primary/5 hover:to-brand-secondary/5 rounded-2xl overflow-hidden">
       <CardContent className="p-6">
         <div className="flex flex-col h-full">
           {/* Header with icon and badge */}
@@ -150,7 +150,7 @@ const DownloadsSection = () => {
   );
 
   return (
-    <section id="downloads" className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-brand-light/20 via-white to-brand-light/10">
+    <section id="downloads" className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-brand-light/20 via-background to-brand-light/10">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
@@ -200,7 +200,7 @@ const DownloadsSection = () => {
           </div>
 
           {/* Download Instructions */}
-          <Card className="mt-16 md:mt-20 shadow-xl border-0 bg-gradient-to-br from-white to-gray-50/50 rounded-3xl overflow-hidden">
+          <Card className="mt-16 md:mt-20 shadow-xl border-0 bg-card rounded-3xl overflow-hidden">
             <CardContent className="p-6 md:p-8 lg:p-10">
               <div className="text-center mb-8">
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-xl mb-4">

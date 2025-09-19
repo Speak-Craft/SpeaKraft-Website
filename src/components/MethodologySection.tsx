@@ -300,7 +300,7 @@ const MethodologySection = () => {
                     className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 ${
                       activeTechTab === component.id 
                         ? 'bg-brand-primary text-white shadow-lg transform scale-105' 
-                        : 'bg-white dark:bg-gray-800 text-muted-foreground hover:bg-brand-light hover:text-foreground shadow-soft'
+                        : 'bg-card text-muted-foreground hover:bg-brand-light hover:text-foreground shadow-soft'
                     }`}
                   >
                     <IconComponent className="h-4 w-4" />

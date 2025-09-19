@@ -3,14 +3,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { MapPin, Phone, Mail, Send, Loader2, Copy } from 'lucide-react';
+import { MapPin, Phone, Mail, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import emailjs from '@emailjs/browser';
-import { EMAILJS_CONFIG, isEmailJSConfigured } from '@/config/emailjs';
 
 const ContactSection = () => {
   const { toast } = useToast();
-  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,7 +15,7 @@ const ContactSection = () => {
     message: ''
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -31,100 +28,19 @@ const ContactSection = () => {
       return;
     }
 
-    setIsLoading(true);
+    // Simulate form submission
+    toast({
+      title: "Message Sent!",
+      description: "Thank you for your inquiry. We'll get back to you soon.",
+    });
 
-    // Check if EmailJS is properly configured
-    if (!isEmailJSConfigured()) {
-      // Fallback: Show email content for manual sending
-      const emailContent = `To: SpeaKraft2025@gmail.com
-From: ${formData.email}
-Subject: ${formData.subject}
-
-From: ${formData.name} (${formData.email})
-
-Message:
-${formData.message}
-
----
-This message was sent from the SpeaKraft website contact form.`;
-
-      // Copy to clipboard
-      try {
-        await navigator.clipboard.writeText(emailContent);
-        toast({
-          title: "Message Ready to Send!",
-          description: "Your message has been copied to your clipboard. Please paste it in an email to SpeaKraft2025@gmail.com",
-        });
-      } catch (clipboardError) {
-        toast({
-          title: "Message Ready to Send",
-          description: `Please send this message to SpeaKraft2025@gmail.com:\n\nSubject: ${formData.subject}\nFrom: ${formData.name} (${formData.email})\nMessage: ${formData.message}`,
-        });
-      }
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-
-      setIsLoading(false);
-      return;
-    }
-
-    try {
-      // Prepare template parameters
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_email: EMAILJS_CONFIG.TO_EMAIL
-      };
-
-      // Send email using EmailJS
-      await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        templateParams,
-        EMAILJS_CONFIG.PUBLIC_KEY
-      );
-
-      toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for your inquiry. We'll get back to you soon at SpeaKraft2025@gmail.com",
-      });
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-
-    } catch (error) {
-      console.error('Error sending email:', error);
-      
-      // Show specific error message for invalid public key
-      if (error instanceof Error && error.message.includes('Public Key is invalid')) {
-        toast({
-          title: "EmailJS Configuration Error",
-          description: "EmailJS is not properly configured. Please contact the administrator or send your message directly to SpeaKraft2025@gmail.com",
-          variant: "destructive"
-        });
-      } else {
-        toast({
-          title: "Error Sending Message",
-          description: "There was an error sending your message. Please try again or contact us directly at SpeaKraft2025@gmail.com",
-          variant: "destructive"
-        });
-      }
-    } finally {
-      setIsLoading(false);
-    }
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -224,20 +140,10 @@ This message was sent from the SpeaKraft website contact form.`;
                   <Button
                     type="submit"
                     size="lg"
-                    disabled={isLoading}
-                    className="w-full gradient-button hover:opacity-90 transition-all hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full gradient-button hover:opacity-90 transition-all hover:scale-105 shadow-lg"
                   >
-                    {isLoading ? (
-                      <>
-                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="mr-2 h-5 w-5" />
-                        Send Message
-                      </>
-                    )}
+                    <Send className="mr-2 h-5 w-5" />
+                    Send Message
                   </Button>
                 </form>
               </CardContent>
