@@ -134,10 +134,10 @@ const HeroSection = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-white/50 group"
+                  className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-white/50 group bg-white/5"
                   onClick={scrollToNextSection}
                 >
-                  <span className="group-hover:animate-pulse">Learn More</span>
+                  <span className="group-hover:animate-pulse text-white">Learn More</span>
                 </Button>
               </div>
 
