@@ -11,6 +11,23 @@ import {
   type CarouselApi,
 } from '@/components/ui/carousel';
 
+// Import carousel images
+import registerImg from '@/assets/Register.png';
+import loginImg from '@/assets/login.png';
+import dashboardImg from '@/assets/dashboard.png';
+import insightsImg from '@/assets/insights.png';
+import emotionDetectionImg from '@/assets/face-analysis.png';
+import emotionActivitiesImg from '@/assets/emotion-activity.png';
+import fillerPracticeImg from '@/assets/filler-practice.png';
+import fillerActivityImg from '@/assets/filler-activity.png';
+import pacePracticeImg from '@/assets/pace-practice.png';
+import paceActivityImg from '@/assets/pace-activity.png';
+import loudnessPracticeImg from '@/assets/loudness-practice.png';
+import loudnessActivityImg from '@/assets/loudness-activity.png';
+import slideContentGeneratorImg from '@/assets/slide-content-generator.png';
+import timeImg from '@/assets/time.png';
+import questionGeneratorImg from '@/assets/question-generator.png';
+
 const ImageCarousel = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
@@ -22,96 +39,112 @@ const ImageCarousel = () => {
       id: 1,
       title: "User Registration",
       description: "Simple and intuitive user registration interface",
-      src: "/src/assets/Register.png",
+      src: registerImg,
       placeholder: false
     },
     {
       id: 2,
       title: "Login Interface",
       description: "Secure login system for user authentication",
-      src: "/src/assets/login.png",
+      src: loginImg,
       placeholder: false
     },
     {
       id: 3,
       title: "Main Dashboard",
       description: "Central hub for accessing all training modules and features",
-      src: "/src/assets/Dashboard.png",
+      src: dashboardImg,
       placeholder: false
     },
     {
       id: 4,
-      title: "Filler Word Practice",
-      description: "Interactive practice sessions for reducing filler words",
-      src: "/src/assets/filler-practice.png",
+      title: "Main Dashboard",
+      description: "Central hub for accessing all training modules and features",
+      src: dashboardImg,
       placeholder: false
     },
     {
       id: 5,
-      title: "Filler Word Activities",
-      description: "Engaging activities to identify and eliminate filler words",
-      src: "/src/assets/filler-activity.png",
+      title: "SpeakKraft Insights",
+      description: "Overall performance insights and analysis",
+      src: insightsImg,
       placeholder: false
     },
     {
       id: 6,
-      title: "Pace Practice",
-      description: "Training module for improving speech pacing and rhythm",
-      src: "/src/assets/pace-practice.png",
+      title: "Filler Word Detection",
+      description: "Filler word detection and analysis",
+      src: fillerPracticeImg,
       placeholder: false
     },
     {
       id: 7,
-      title: "Pace Activities",
-      description: "Interactive exercises for mastering speech pace control",
-      src: "/src/assets/pace-activity.png",
+      title: "Filler Word Activities",
+      description: "Engaging activities to identify and eliminate filler words",
+      src: fillerActivityImg,
       placeholder: false
     },
     {
       id: 8,
-      title: "Loudness Practice",
-      description: "Voice volume training and projection exercises",
-      src: "/src/assets/loudness-practice.png",
+      title: "Pace Practice",
+      description: "Training module for improving speech pacing and rhythm",
+      src: pacePracticeImg,
       placeholder: false
     },
     {
       id: 9,
-      title: "Loudness Activities",
-      description: "Dynamic activities for voice loudness control",
-      src: "/src/assets/loudness-activity.png",
+      title: "Pace Activities",
+      description: "Interactive exercises for mastering speech pace control",
+      src: paceActivityImg,
       placeholder: false
     },
     {
       id: 10,
-      title: "Emotion Detection",
-      description: "Advanced AI emotion recognition and analysis system",
-      placeholder: true
+      title: "Loudness Practice",
+      description: "Voice volume training and projection exercises",
+      src: loudnessPracticeImg,
+      placeholder: false
     },
     {
       id: 11,
-      title: "Emotion Activities",
-      description: "Interactive exercises for emotional expression training",
-      placeholder: true
+      title: "Loudness Activities",
+      description: "Dynamic activities for voice loudness control",
+      src: loudnessActivityImg,
+      placeholder: false
     },
     {
       id: 12,
-      title: "Slide Content Generator",
-      description: "AI-powered tool for generating presentation content",
-      src: "/src/assets/slide-content-generator.png",
+      title: "Emotion Detection",
+      description: "Advanced AI emotion recognition and analysis system",
+      src: emotionDetectionImg,
       placeholder: false
     },
     {
       id: 13,
-      title: "Time Management",
-      description: "Tools for managing presentation timing and duration",
-      src: "/src/assets/time.png",
+      title: "Emotion Activities",
+      description: "Interactive exercises for emotional expression training",
+      src: emotionActivitiesImg,
       placeholder: false
     },
     {
       id: 14,
+      title: "Slide Content Generator",
+      description: "AI-powered tool for generating presentation content",
+      src: slideContentGeneratorImg,
+      placeholder: false
+    },
+    {
+      id: 15,
+      title: "Time Management",
+      description: "Tools for managing presentation timing and duration",
+      src: timeImg,
+      placeholder: false
+    },
+    {
+      id: 16,
       title: "Question Generator",
       description: "AI-generated questions for practice and assessment",
-      src: "/src/assets/question-generator.png",
+      src: questionGeneratorImg,
       placeholder: false
     }
   ];
