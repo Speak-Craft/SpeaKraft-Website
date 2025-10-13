@@ -2,6 +2,14 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Mail, Linkedin, User, GraduationCap } from 'lucide-react';
 
+// Import team member images
+import samanthaImg from '@/assets/samantha.png';
+import samadhiImg from '@/assets/samadhi.png';
+import chathuraImg from '@/assets/chathura.jpg';
+import dileekaImg from '@/assets/dileeka.jpg';
+import sammaniImg from '@/assets/Sammani.jpg';
+import avishkaImg from '@/assets/avishka.jpg';
+
 interface Person {
   name: string;
   role?: string;
@@ -22,7 +30,7 @@ const AboutUsSection = () => {
     location: "Malabe, Sri Lanka",
     email: "samantha.r@sliit.lk",
     linkedin: "https://www.linkedin.com/in/samantha-rajapaksha-528657b/",
-    image: "/src/assets/samantha.png"
+    image: samanthaImg
   };
 
   const coSupervisor: Person = {
@@ -33,7 +41,7 @@ const AboutUsSection = () => {
     location: "Malabe, Sri Lanka",
     email: "samadhi.r@sliit.lk",
     linkedin: "https://www.linkedin.com/in/samadhi-chathuranga-rathnayake/",
-    image: "/src/assets/samadhi.png"
+    image: samadhiImg
   };
 
   const teamMembers: Person[] = [
@@ -44,7 +52,7 @@ const AboutUsSection = () => {
       location: "Malabe, Sri Lanka",
       email: "chathuramadhushan23@gmail.com",
       linkedin: "https://www.linkedin.com/in/chathuraprageeth/",
-      image: "/src/assets/chathura.jpg"
+      image: chathuraImg
     },
     {
       name: "Dileeka Boralugoda",
@@ -53,7 +61,7 @@ const AboutUsSection = () => {
       location: "Malabe, Sri Lanka",
       email: "sanjaniboralugoda@gmail.com",
       linkedin: "https://www.linkedin.com/in/dileeka-boralugoda-633784298",
-      image: "/src/assets/dileeka.jpg"
+      image: dileekaImg
     },
     {
       name: "Sammani Vishara",
@@ -62,7 +70,7 @@ const AboutUsSection = () => {
       location: "Malabe, Sri Lanka",
       email: "sammanivishara@gmail.com",
       linkedin: "https://www.linkedin.com/in/sammani-vishara-148a03389/",
-      image: "/src/assets/Sammani.jpg"
+      image: sammaniImg
     },
     {
       name: "Avishka Perera",
@@ -71,7 +79,7 @@ const AboutUsSection = () => {
       location: "Malabe, Sri Lanka", 
       email: "maduwanthaavishka81@gmail.com",
       linkedin: "https://www.linkedin.com/in/avishka-perera-7990b1154/",
-      image: "/src/assets/avishka.jpg"
+      image: avishkaImg
     }
   ];
 
