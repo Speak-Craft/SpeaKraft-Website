@@ -207,6 +207,7 @@ const ContactSection = () => {
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                       className="w-full h-[300px]"
+                      title="SLIIT Location"
                     ></iframe>
                     
                     {/* Map Overlay */}
@@ -215,6 +216,14 @@ const ContactSection = () => {
                     {/* Map Label */}
                     <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
                       <p className="text-sm font-semibold text-gray-800">SLIIT Malabe Campus</p>
+                      <a 
+                        href="https://www.google.com/maps/place/Sri+Lanka+Institute+of+Information+Technology"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-primary hover:underline"
+                      >
+                        Open in Maps →
+                      </a>
                     </div>
                   </div>
                 </CardContent>
