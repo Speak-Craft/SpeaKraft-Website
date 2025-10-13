@@ -21,8 +21,8 @@ const AboutUsSection = () => {
     institution: "Sri Lanka Institute of Information Technology",
     location: "Malabe, Sri Lanka",
     email: "samantha.r@sliit.lk",
-    linkedin: "#",
-    image: null
+    linkedin: "https://www.linkedin.com/in/samantha-rajapaksha-528657b/",
+    image: "/src/assets/samantha.png"
   };
 
   const coSupervisor: Person = {
@@ -32,8 +32,8 @@ const AboutUsSection = () => {
     institution: "Sri Lanka Institute of Information Technology",
     location: "Malabe, Sri Lanka",
     email: "samadhi.r@sliit.lk",
-    linkedin: "#",
-    image: null
+    linkedin: "https://www.linkedin.com/in/samadhi-chathuranga-rathnayake/",
+    image: "/src/assets/samadhi.png"
   };
 
   const teamMembers: Person[] = [
@@ -42,8 +42,8 @@ const AboutUsSection = () => {
       department: "Department of Information Technology",
       institution: "Sri Lanka Institute of Information Technology",
       location: "Malabe, Sri Lanka",
-      email: "chathura.p@my.sliit.lk",
-      linkedin: "#",
+      email: "chathuramadhushan23@gmail.com",
+      linkedin: "https://www.linkedin.com/in/chathuraprageeth/",
       image: "/src/assets/chathura.jpg"
     },
     {
@@ -51,8 +51,8 @@ const AboutUsSection = () => {
       department: "Department of Information Technology", 
       institution: "Sri Lanka Institute of Information Technology",
       location: "Malabe, Sri Lanka",
-      email: "dileeka.b@my.sliit.lk",
-      linkedin: "#",
+      email: "sanjaniboralugoda@gmail.com",
+      linkedin: "https://www.linkedin.com/in/dileeka-boralugoda-633784298",
       image: "/src/assets/dileeka.jpg"
     },
     {
@@ -61,7 +61,7 @@ const AboutUsSection = () => {
       institution: "Sri Lanka Institute of Information Technology", 
       location: "Malabe, Sri Lanka",
       email: "sammanivishara@gmail.com",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/sammani-vishara-148a03389/",
       image: "/src/assets/Sammani.jpg"
     },
     {
@@ -69,8 +69,8 @@ const AboutUsSection = () => {
       department: "Department of Information Technology",
       institution: "Sri Lanka Institute of Information Technology",
       location: "Malabe, Sri Lanka", 
-      email: "avishka.p@my.sliit.lk",
-      linkedin: "#",
+      email: "maduwanthaavishka81@gmail.com",
+      linkedin: "https://www.linkedin.com/in/avishka-perera-7990b1154/",
       image: "/src/assets/avishka.jpg"
     }
   ];
