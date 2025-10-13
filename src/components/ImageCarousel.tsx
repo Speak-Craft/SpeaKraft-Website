@@ -16,6 +16,8 @@ import registerImg from '@/assets/Register.png';
 import loginImg from '@/assets/login.png';
 import dashboardImg from '@/assets/dashboard.png';
 import insightsImg from '@/assets/insights.png';
+import emotionDetectionImg from '@/assets/face-analysis.png';
+import emotionActivitiesImg from '@/assets/emotion-activity.png';
 import fillerPracticeImg from '@/assets/filler-practice.png';
 import fillerActivityImg from '@/assets/filler-activity.png';
 import pacePracticeImg from '@/assets/pace-practice.png';
@@ -70,67 +72,76 @@ const ImageCarousel = () => {
     },
     {
       id: 6,
+      title: "Filler Word Detection",
+      description: "Filler word detection and analysis",
+      src: fillerPracticeImg,
+      placeholder: false
+    },
+    {
+      id: 7,
       title: "Filler Word Activities",
       description: "Engaging activities to identify and eliminate filler words",
       src: fillerActivityImg,
       placeholder: false
     },
     {
-      id: 7,
+      id: 8,
       title: "Pace Practice",
       description: "Training module for improving speech pacing and rhythm",
       src: pacePracticeImg,
       placeholder: false
     },
     {
-      id: 8,
+      id: 9,
       title: "Pace Activities",
       description: "Interactive exercises for mastering speech pace control",
       src: paceActivityImg,
       placeholder: false
     },
     {
-      id: 9,
+      id: 10,
       title: "Loudness Practice",
       description: "Voice volume training and projection exercises",
       src: loudnessPracticeImg,
       placeholder: false
     },
     {
-      id: 10,
+      id: 11,
       title: "Loudness Activities",
       description: "Dynamic activities for voice loudness control",
       src: loudnessActivityImg,
       placeholder: false
     },
     {
-      id: 11,
+      id: 12,
       title: "Emotion Detection",
       description: "Advanced AI emotion recognition and analysis system",
-      placeholder: true
-    },
-    {
-      id: 12,
-      title: "Emotion Activities",
-      description: "Interactive exercises for emotional expression training",
-      placeholder: true
+      src: emotionDetectionImg,
+      placeholder: false
     },
     {
       id: 13,
+      title: "Emotion Activities",
+      description: "Interactive exercises for emotional expression training",
+      src: emotionActivitiesImg,
+      placeholder: false
+    },
+    {
+      id: 14,
       title: "Slide Content Generator",
       description: "AI-powered tool for generating presentation content",
       src: slideContentGeneratorImg,
       placeholder: false
     },
     {
-      id: 14,
+      id: 15,
       title: "Time Management",
       description: "Tools for managing presentation timing and duration",
       src: timeImg,
       placeholder: false
     },
     {
-      id: 15,
+      id: 16,
       title: "Question Generator",
       description: "AI-generated questions for practice and assessment",
       src: questionGeneratorImg,
