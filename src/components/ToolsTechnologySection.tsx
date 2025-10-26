@@ -359,9 +359,9 @@ const ToolsTechnologySection = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4 animate-fade-in-up">
-              <Sparkles className="h-6 w-6 text-brand-primary animate-pulse" />
-              <span className="text-brand-primary font-semibold text-lg">Technology Stack</span>
-              <Sparkles className="h-6 w-6 text-brand-primary animate-pulse" />
+              <Sparkles className="h-6 w-6 text-brand-primary dark:text-white animate-pulse" />
+              <span className="text-brand-primary dark:text-white font-semibold text-lg">Technology Stack</span>
+              <Sparkles className="h-6 w-6 text-brand-primary dark:text-white animate-pulse" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <span className="bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent bg-clip-text text-transparent">
@@ -401,7 +401,7 @@ const ToolsTechnologySection = () => {
                   
                   <CardContent className="p-6 relative z-10">
                     <div className="mb-6">
-                      <h3 className="text-xl font-bold text-foreground group-hover:text-brand-primary transition-colors">{category.title}</h3>
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-brand-primary dark:group-hover:text-white transition-colors">{category.title}</h3>
                     </div>
                     
                     <div className="space-y-4">
@@ -432,7 +432,7 @@ const ToolsTechnologySection = () => {
                               <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} rounded-lg blur-md opacity-0 group-hover/item:opacity-30 transition-opacity duration-300`} />
                             </div>
                             <div className="flex-1 min-w-0">
-                              <h4 className="font-semibold text-foreground text-sm group-hover/item:text-brand-primary transition-colors">{item.name}</h4>
+                              <h4 className="font-semibold text-foreground text-sm group-hover/item:text-brand-primary dark:group-hover/item:text-white transition-colors">{item.name}</h4>
                               <p className="text-xs text-muted-foreground leading-relaxed group-hover/item:text-foreground transition-colors">{item.description}</p>
                             </div>
                           </div>
@@ -452,7 +452,7 @@ const ToolsTechnologySection = () => {
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-brand-primary/10 dark:bg-brand-primary/20 rounded-lg flex items-center justify-center">
-                    <Zap className="h-6 w-6 text-brand-primary" />
+                    <Zap className="h-6 w-6 text-brand-primary dark:text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground">Frontend Stack</h3>
                 </div>
@@ -494,7 +494,7 @@ const ToolsTechnologySection = () => {
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-brand-accent/10 dark:bg-brand-accent/20 rounded-lg flex items-center justify-center">
-                    <Cpu className="h-6 w-6 text-brand-accent" />
+                    <Cpu className="h-6 w-6 text-brand-accent dark:text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground">Backend & AI Stack</h3>
                 </div>
@@ -546,28 +546,28 @@ const ToolsTechnologySection = () => {
                   <div className="w-16 h-16 bg-gradient-to-r from-brand-primary to-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce-slow group-hover/step:scale-110 transition-transform shadow-lg">
                     <Figma className="h-8 w-8 text-white" />
                   </div>
-                  <h4 className="font-semibold text-foreground mb-2 group-hover/step:text-brand-primary transition-colors">Design</h4>
+                  <h4 className="font-semibold text-foreground mb-2 group-hover/step:text-brand-primary dark:group-hover/step:text-white transition-colors">Design</h4>
                   <p className="text-sm text-muted-foreground group-hover/step:text-foreground transition-colors">Figma wireframes and prototyping</p>
                 </div>
                 <div className="text-center group/step">
                   <div className="w-16 h-16 bg-gradient-to-r from-brand-secondary to-brand-accent rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce-slow group-hover/step:scale-110 transition-transform shadow-lg" style={{ animationDelay: '0.2s' }}>
                     <Terminal className="h-8 w-8 text-white" />
                   </div>
-                  <h4 className="font-semibold text-foreground mb-2 group-hover/step:text-brand-secondary transition-colors">Develop</h4>
+                  <h4 className="font-semibold text-foreground mb-2 group-hover/step:text-brand-secondary dark:group-hover/step:text-white transition-colors">Develop</h4>
                   <p className="text-sm text-muted-foreground group-hover/step:text-foreground transition-colors">VS Code, IntelliJ, PyCharm</p>
                 </div>
                 <div className="text-center group/step">
                   <div className="w-16 h-16 bg-gradient-to-r from-brand-accent to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce-slow group-hover/step:scale-110 transition-transform shadow-lg" style={{ animationDelay: '0.4s' }}>
                     <TestTube className="h-8 w-8 text-white" />
                   </div>
-                  <h4 className="font-semibold text-foreground mb-2 group-hover/step:text-brand-accent transition-colors">Test</h4>
+                  <h4 className="font-semibold text-foreground mb-2 group-hover/step:text-brand-accent dark:group-hover/step:text-white transition-colors">Test</h4>
                   <p className="text-sm text-muted-foreground group-hover/step:text-foreground transition-colors">Jest, JUnit, Postman, unittest</p>
                 </div>
                 <div className="text-center group/step">
                   <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce-slow group-hover/step:scale-110 transition-transform shadow-lg" style={{ animationDelay: '0.6s' }}>
                     <Box className="h-8 w-8 text-white" />
                   </div>
-                  <h4 className="font-semibold text-foreground mb-2 group-hover/step:text-green-500 transition-colors">Deploy</h4>
+                  <h4 className="font-semibold text-foreground mb-2 group-hover/step:text-green-500 dark:group-hover/step:text-white transition-colors">Deploy</h4>
                   <p className="text-sm text-muted-foreground group-hover/step:text-foreground transition-colors">Docker, Chef automation</p>
                 </div>
               </div>
