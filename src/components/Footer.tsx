@@ -151,7 +151,7 @@ const Footer = () => {
         <div className="border-t border-white/20 py-3">
           <div className="flex flex-col md:flex-row justify-between items-center gap-2">
             <p className="text-white/50 text-xs text-center md:text-left animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-              © 2024 SpeaKraft Research Project. All rights reserved.
+              © 2025 SpeaKraft Research Project. All rights reserved.
             </p>
             <div className="flex items-center gap-2 text-xs text-white/50 animate-fade-in-up" style={{animationDelay: '0.7s'}}>
               <span>Developed by SLIIT Research Team</span>

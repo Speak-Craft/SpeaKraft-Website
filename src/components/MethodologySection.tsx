@@ -96,6 +96,40 @@ const MethodologySection = () => {
         'MFCC feature extraction and MLP classification',
         'Multi-level feature extraction using Librosa and Parselmouth'
       ],
+      rateModel: {
+        purpose: 'The Rate Model analyzes speech velocity using Words Per Minute (WPM) measurements combined with MLP classification to categorize speech pace and provide personalized feedback.',
+        workflow: [
+          'Audio preprocessing with librosa (16kHz sampling)',
+          'OpenAI Whisper transcription with word-level timestamps',
+          'MFCC feature extraction (13 coefficients)',
+          'MLP classifier for WPM categorization',
+          'Comprehensive feedback generation with actionable recommendations'
+        ],
+        categories: [
+          { type: 'Slow Pace', wpm: '< 100', color: 'yellow', feedback: 'Below ideal range but manageable with practice' },
+          { type: 'Ideal Pace', wpm: '100-150', color: 'green', feedback: 'Optimal pace for audience engagement' },
+          { type: 'Fast Pace', wpm: '> 150', color: 'orange', feedback: 'Above optimal - may affect comprehension' }
+        ],
+        features: [
+          'Words Per Minute (WPM) calculation',
+          'Consistency score analysis (std deviation of WPM)',
+          'Pacing curve visualization over time',
+          'Flow analysis (words per second)',
+          'Enhanced feedback with priority recommendations'
+        ],
+        mlApproach: {
+          preprocessor: 'StandardScaler for feature normalization',
+          model: 'MLPClassifier with (64, 32) hidden layers',
+          training: '80/20 split with up to 300 epochs',
+          evaluation: 'Classification report with confusion matrix',
+          libraries: ['librosa', 'scikit-learn', 'whisper', 'numpy']
+        },
+        feedbackExamples: [
+          'Slow pace → "Aim to increase your pace by 15-20 WPM with timing exercises"',
+          'Fast pace → "Practice breathing exercises to control your pace and reduce speed"',
+          'Inconsistent → "Use pacing markers and practice steady rhythm with metronome"'
+        ]
+      },
       pauseModel: {
         purpose: 'The Pause & Rhythm Model focuses on analyzing not just the number of pauses but their quality, placement, and rhythm. Many students pause too long out of hesitation, or avoid pauses completely, resulting in rushed delivery.',
         categories: [
@@ -210,7 +244,7 @@ const MethodologySection = () => {
                   <div className="w-10 h-10 bg-gradient-to-r from-brand-primary to-brand-secondary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                     <Cpu className="h-5 w-5 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground group-hover:text-brand-primary transition-colors">Overall System Architecture</h3>
+                  <h3 className="text-2xl font-bold text-foreground group-hover:text-brand-primary dark:group-hover:text-white transition-colors">Overall System Architecture</h3>
                 </div>
                 <div className="aspect-video rounded-lg overflow-hidden mb-4 border border-brand-primary/20">
                   <img 
@@ -246,7 +280,7 @@ const MethodologySection = () => {
                   <div className="w-10 h-10 bg-gradient-to-r from-brand-accent to-brand-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                     <Workflow className="h-5 w-5 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground group-hover:text-brand-accent transition-colors">System Flow Diagram</h3>
+                  <h3 className="text-2xl font-bold text-foreground group-hover:text-brand-accent dark:group-hover:text-white transition-colors">System Flow Diagram</h3>
                 </div>
                 <div className="aspect-video rounded-lg overflow-hidden mb-4 border border-brand-accent/20">
                   <img 
@@ -324,7 +358,7 @@ const MethodologySection = () => {
                             <component.icon className="h-6 w-6 text-white" />
                           </div>
                           <div>
-                            <h4 className="text-2xl font-bold text-foreground group-hover:text-brand-primary transition-colors">{component.title}</h4>
+                            <h4 className="text-2xl font-bold text-foreground group-hover:text-brand-primary dark:group-hover:text-white transition-colors">{component.title}</h4>
                             <p className={`text-${component.color} dark:text-${component.color} text-sm font-medium`}>Technical Implementation Details</p>
                           </div>
                         </div>
@@ -579,102 +613,186 @@ const MethodologySection = () => {
                           </div>
                         )}
 
-                        {/* Pacing Component - Enhanced with Pause Model */}
-                        {component.id === 'pacing' && component.pauseModel && (
-                          <div className="grid lg:grid-cols-2 gap-8">
-                            {/* Pause & Rhythm Model Details */}
-                            <div className="space-y-6">
-                              <div>
-                                <h5 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                                  <TrendingUp className="h-5 w-5 text-green-500" />
-                                  Pause & Rhythm Model
-                                </h5>
-                                <p className="text-muted-foreground leading-relaxed mb-4">
-                                  {component.pauseModel.purpose}
-                                </p>
-                                
-                                <div className="space-y-3">
-                                  <h6 className="font-semibold text-foreground">Pause Categories:</h6>
-                                  {component.pauseModel.categories.map((category, catIndex) => (
-                                    <div key={catIndex} className="flex items-center gap-3 p-2 bg-green-50 dark:bg-green-900/20 rounded-lg">
-                                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: `${catIndex * 0.1}s` }} />
-                                      <span className="font-medium text-foreground text-sm">{category.type}</span>
-                                      <span className="text-green-600 dark:text-green-400 text-xs font-mono bg-green-100 dark:bg-green-800 px-2 py-1 rounded">
-                                        {category.duration}
-                                      </span>
-                                      <span className="text-muted-foreground text-xs">{category.purpose}</span>
-                                    </div>
-                                  ))}
+                        {/* Pacing Component - Enhanced with Rate and Pause Models */}
+                        {component.id === 'pacing' && component.rateModel && component.pauseModel && (
+                          <div className="space-y-8">
+                            {/* Problem Statement */}
+                            <div>
+                              <h5 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+                                <AlertCircle className="h-5 w-5 text-green-500" />
+                                Problem Statement
+                              </h5>
+                              <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border-l-4 border-green-500">
+                                <ul className="space-y-2 text-sm text-muted-foreground">
+                                  <li>• Many Sri Lankan students struggle with speech pacing - speaking too fast under pressure or too slowly due to hesitation</li>
+                                  <li>• Existing tools only measure simple metrics like words-per-minute without analyzing rhythm, pauses, or consistency</li>
+                                  <li>• No system exists that provides holistic feedback on both speech rate AND pause patterns for Sri Lankan speakers</li>
+                                  <li>• Solution: Dual-model approach combining Whisper-based WPM analysis with advanced pause rhythm detection</li>
+                                </ul>
+                              </div>
+                            </div>
+
+                            {/* Dual Model Header */}
+                            <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-4 rounded-lg">
+                              <p className="text-sm text-muted-foreground text-center">
+                                The Speech Pace Management system uses <strong className="text-foreground">two complementary AI models</strong> working together: 
+                                the <strong className="text-foreground">Rate Model</strong> for WPM analysis and the <strong className="text-foreground">Pause & Rhythm Model</strong> for timing patterns.
+                              </p>
+                            </div>
+
+                            {/* Model Tabs or Grid */}
+                            <div className="grid lg:grid-cols-2 gap-8">
+                              {/* Rate Model */}
+                              <div className="space-y-6">
+                                <div>
+                                  <h5 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+                                    <Activity className="h-5 w-5 text-green-500" />
+                                    Rate Model - WPM Analysis
+                                  </h5>
+                                  <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
+                                    {component.rateModel.purpose}
+                                  </p>
+                                  
+                                  <div className="space-y-3">
+                                    <h6 className="font-semibold text-foreground">WPM Categories:</h6>
+                                    {component.rateModel.categories.map((category, catIndex) => (
+                                      <div key={catIndex} className={`p-3 rounded-lg border-l-4 ${
+                                        category.color === 'yellow' ? 'bg-yellow-50 dark:bg-yellow-900/20 border-yellow-500' :
+                                        category.color === 'green' ? 'bg-green-50 dark:bg-green-900/20 border-green-500' :
+                                        'bg-orange-50 dark:bg-orange-900/20 border-orange-500'
+                                      }`}>
+                                        <div className="flex items-center gap-2 mb-1">
+                                          <span className={`font-semibold text-sm ${
+                                            category.color === 'yellow' ? 'text-yellow-700 dark:text-yellow-400' :
+                                            category.color === 'green' ? 'text-green-700 dark:text-green-400' :
+                                            'text-orange-700 dark:text-orange-400'
+                                          }`}>{category.type}</span>
+                                          <span className="text-xs font-mono text-muted-foreground">{category.wpm} WPM</span>
+                                        </div>
+                                        <p className="text-xs text-muted-foreground">{category.feedback}</p>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+
+                                <div>
+                                  <h6 className="font-semibold text-foreground mb-2">Workflow:</h6>
+                                  <div className="space-y-2">
+                                    {component.rateModel.workflow.map((step, stepIndex) => (
+                                      <div key={stepIndex} className="flex items-start gap-2">
+                                        <Badge variant="secondary" className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs">
+                                          {stepIndex + 1}
+                                        </Badge>
+                                        <p className="text-sm text-muted-foreground">{step}</p>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+
+                                <div>
+                                  <h6 className="font-semibold text-foreground mb-2">Key Features:</h6>
+                                  <div className="grid grid-cols-1 gap-2">
+                                    {component.rateModel.features.map((feature, featIndex) => (
+                                      <div key={featIndex} className="flex items-start gap-2">
+                                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <p className="text-sm text-muted-foreground">{feature}</p>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+
+                                <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
+                                  <h6 className="font-semibold text-foreground mb-2 text-sm">ML Approach:</h6>
+                                  <div className="space-y-1 text-xs text-muted-foreground">
+                                    <p>• Model: {component.rateModel.mlApproach.model}</p>
+                                    <p>• Preprocessing: {component.rateModel.mlApproach.preprocessor}</p>
+                                    <p>• Training: {component.rateModel.mlApproach.training}</p>
+                                    <p>• Libraries: {component.rateModel.mlApproach.libraries.join(', ')}</p>
+                                  </div>
                                 </div>
                               </div>
 
-                              <div>
-                                <h6 className="font-semibold text-foreground mb-3">Key Features Analyzed:</h6>
-                                <div className="grid grid-cols-1 gap-2">
-                                  {component.pauseModel.features.map((feature, featIndex) => (
-                                    <div key={featIndex} className="flex items-start gap-2">
-                                      <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                                      <p className="text-sm text-muted-foreground">{feature}</p>
+                              {/* Pause & Rhythm Model */}
+                              <div className="space-y-6">
+                                <div>
+                                  <h5 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+                                    <TrendingUp className="h-5 w-5 text-green-500" />
+                                    Pause & Rhythm Model
+                                  </h5>
+                                  <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
+                                    {component.pauseModel.purpose}
+                                  </p>
+                                  
+                                  <div className="space-y-3">
+                                    <h6 className="font-semibold text-foreground">Pause Categories:</h6>
+                                    {component.pauseModel.categories.map((category, catIndex) => (
+                                      <div key={catIndex} className="flex items-center gap-3 p-2 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: `${catIndex * 0.1}s` }} />
+                                        <span className="font-medium text-foreground text-sm">{category.type}</span>
+                                        <span className="text-green-600 dark:text-green-400 text-xs font-mono bg-green-100 dark:bg-green-800 px-2 py-1 rounded">
+                                          {category.duration}
+                                        </span>
+                                        <span className="text-muted-foreground text-xs">{category.purpose}</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+
+                                <div>
+                                  <h6 className="font-semibold text-foreground mb-3">Key Features Analyzed:</h6>
+                                  <div className="grid grid-cols-1 gap-2">
+                                    {component.pauseModel.features.map((feature, featIndex) => (
+                                      <div key={featIndex} className="flex items-start gap-2">
+                                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <p className="text-sm text-muted-foreground">{feature}</p>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+
+                                <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
+                                  <h6 className="font-semibold text-foreground mb-2 text-sm">ML Approach:</h6>
+                                  <div className="space-y-2">
+                                    <div>
+                                      <p className="text-xs font-medium text-foreground">Classifiers:</p>
+                                      <div className="flex flex-wrap gap-1 mt-1">
+                                        {component.pauseModel.mlApproach.classifiers.map((classifier, clsIndex) => (
+                                          <Badge key={clsIndex} variant="secondary" className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs">
+                                            {classifier}
+                                          </Badge>
+                                        ))}
+                                      </div>
                                     </div>
-                                  ))}
+                                  </div>
+                                </div>
+
+                                <div>
+                                  <h6 className="font-semibold text-foreground mb-3">Feedback Examples:</h6>
+                                  <div className="space-y-2">
+                                    {component.pauseModel.feedbackExamples.map((example, exIndex) => (
+                                      <div key={exIndex} className="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg border-l-4 border-green-500">
+                                        <p className="text-sm text-muted-foreground">{example}</p>
+                                      </div>
+                                    ))}
+                                  </div>
                                 </div>
                               </div>
                             </div>
 
-                            {/* Machine Learning Approach */}
-                            <div className="space-y-6">
-                              <div>
-                                <h5 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                                  <Cpu className="h-5 w-5 text-green-500" />
-                                  Machine Learning Approach
-                                </h5>
-                                
-                                <div className="space-y-4">
-                                  <div>
-                                    <h6 className="font-semibold text-foreground mb-2">Input Features:</h6>
-                                    <div className="flex flex-wrap gap-2">
-                                      {component.pauseModel.mlApproach.inputFeatures.map((feature, featIndex) => (
-                                        <Badge key={featIndex} variant="outline" className="border-green-500 text-green-600 dark:text-green-400">
-                                          {feature}
-                                        </Badge>
-                                      ))}
-                                    </div>
-                                  </div>
-
-                                  <div>
-                                    <h6 className="font-semibold text-foreground mb-2">Output Categories:</h6>
-                                    <div className="space-y-2">
-                                      {component.pauseModel.mlApproach.outputCategories.map((category, catIndex) => (
-                                        <div key={catIndex} className="flex items-center gap-2">
-                                          <div className="w-2 h-2 bg-green-500 rounded-full" />
-                                          <span className="text-sm text-muted-foreground">{category}</span>
-                                        </div>
-                                      ))}
-                                    </div>
-                                  </div>
-
-                                  <div>
-                                    <h6 className="font-semibold text-foreground mb-2">Classifiers Used:</h6>
-                                    <div className="flex flex-wrap gap-2">
-                                      {component.pauseModel.mlApproach.classifiers.map((classifier, clsIndex) => (
-                                        <Badge key={clsIndex} variant="secondary" className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300">
-                                          {classifier}
-                                        </Badge>
-                                      ))}
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div>
-                                <h6 className="font-semibold text-foreground mb-3">Real-Time Feedback Examples:</h6>
-                                <div className="space-y-2">
-                                  {component.pauseModel.feedbackExamples.map((example, exIndex) => (
-                                    <div key={exIndex} className="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg border-l-4 border-green-500">
-                                      <p className="text-sm text-muted-foreground">{example}</p>
-                                    </div>
-                                  ))}
-                                </div>
+                            {/* Combined Novelty Section */}
+                            <div className="mt-8">
+                              <h5 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+                                <Star className="h-5 w-5 text-green-500" />
+                                Why This Dual-Model Approach is Novel
+                              </h5>
+                              <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-4 rounded-lg">
+                                <ul className="space-y-2 text-sm text-muted-foreground">
+                                  <li>• First system to combine WPM rate analysis with pause rhythm analysis for comprehensive pace management</li>
+                                  <li>• Localized ML models trained specifically on Sri Lankan speaker patterns</li>
+                                  <li>• Real-time feedback generation combining both models for holistic improvement</li>
+                                  <li>• Advanced acoustic features (MFCCs, RMS, LUFS) beyond simple word count metrics</li>
+                                  <li>• Contextual recommendations based on cross-model analysis</li>
+                                </ul>
                               </div>
                             </div>
                           </div>
@@ -683,71 +801,168 @@ const MethodologySection = () => {
                         {/* Emotion Component */}
                         {component.id === 'emotion' && (
                           <div className="space-y-6">
-                            {/* Software Solution Approach */}
+                            {/* Problem Statement */}
+                            <div>
+                              <h5 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+                                <AlertCircle className="h-5 w-5 text-purple-500" />
+                                Problem Statement
+                              </h5>
+                              <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg border-l-4 border-purple-500">
+                                <ul className="space-y-2 text-sm text-muted-foreground">
+                                  <li>• Many students struggle with maintaining appropriate facial expressions during presentations</li>
+                                  <li>• Existing tools lack real-time emotion detection during video presentations</li>
+                                  <li>• No localized system for tracking emotional engagement and expression variety</li>
+                                  <li>• Solution: TensorFlow CNN-based emotion classifier with advanced coaching features</li>
+                                </ul>
+                              </div>
+                            </div>
+
+                            {/* CNN Architecture */}
+                            <div>
+                              <h5 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+                                <Cpu className="h-5 w-5 text-purple-500" />
+                                CNN Model Architecture
+                              </h5>
+                              <div className="grid md:grid-cols-2 gap-4">
+                                <div className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                  <h6 className="font-semibold text-foreground mb-2">Convolutional Layers:</h6>
+                                  <ul className="text-sm text-muted-foreground space-y-1">
+                                    <li>• Conv2D(64 filters, 3x3) + MaxPool2D</li>
+                                    <li>• Conv2D(64 filters, 3x3) + Dropout(0.2)</li>
+                                    <li>• Conv2D(128 filters, 3x3) + MaxPool2D</li>
+                                    <li>• Conv2D(128 filters, 3x3) + MaxPool2D + Dropout(0.22)</li>
+                                  </ul>
+                                </div>
+                                <div className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                  <h6 className="font-semibold text-foreground mb-2">Dense Layers:</h6>
+                                  <ul className="text-sm text-muted-foreground space-y-1">
+                                    <li>• Flatten → Dense(512) + Dropout(0.5)</li>
+                                    <li>• Dense(256) + Dropout(0.5)</li>
+                                    <li>• Dense(7) + Softmax output</li>
+                                    <li>• Total: 7 emotion categories</li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <p className="text-xs text-muted-foreground mt-3">
+                                👉 Input: 48×48 grayscale face images | Output: Probability distribution over 7 emotions
+                              </p>
+                            </div>
+
+                            {/* Emotion Categories */}
+                            <div>
+                              <h5 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+                                <Activity className="h-5 w-5 text-purple-500" />
+                                Emotion Categories
+                              </h5>
+                              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                {[
+                                  { label: 'Happy', color: 'green', weight: 1.0 },
+                                  { label: 'Surprise', color: 'yellow', weight: 0.6 },
+                                  { label: 'Neutral', color: 'gray', weight: 0.45 },
+                                  { label: 'Sad', color: 'blue', weight: 0.7 },
+                                  { label: 'Angry', color: 'red', weight: 0.9 },
+                                  { label: 'Fear', color: 'orange', weight: 0.7 },
+                                  { label: 'Disgust', color: 'red', weight: 0.9 }
+                                ].map((emotion, idx) => (
+                                  <div key={idx} className={`p-3 rounded-lg border-l-4 ${
+                                    emotion.color === 'green' ? 'bg-green-50 dark:bg-green-900/20 border-green-500' :
+                                    emotion.color === 'yellow' ? 'bg-yellow-50 dark:bg-yellow-900/20 border-yellow-500' :
+                                    emotion.color === 'blue' ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-500' :
+                                    emotion.color === 'red' ? 'bg-red-50 dark:bg-red-900/20 border-red-500' :
+                                    emotion.color === 'orange' ? 'bg-orange-50 dark:bg-orange-900/20 border-orange-500' :
+                                    'bg-gray-50 dark:bg-gray-900/20 border-gray-500'
+                                  }`}>
+                                    <p className="text-sm font-medium text-foreground">{emotion.label}</p>
+                                    <p className="text-xs text-muted-foreground">Weight: {emotion.weight}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+
+                            {/* Face Detection & Processing */}
                             <div>
                               <h5 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
                                 <Eye className="h-5 w-5 text-purple-500" />
-                                Software Solution Approach
+                                Face Detection & Processing
                               </h5>
-                              <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
-                                <p className="text-sm text-muted-foreground mb-4">
-                                  The Emotionally-Aware Presentation Analyzer assesses the visibility of a presenter's face, 
-                                  classifies emotions using convolutional neural networks, and aligns these emotions with 
-                                  the spoken content of a presentation.
-                                </p>
-                                
-                                <div className="grid md:grid-cols-2 gap-4">
-                                  <div>
-                                    <h6 className="font-semibold text-foreground mb-2">Key Components:</h6>
+                              <div className="grid md:grid-cols-2 gap-4">
+                                <div className="space-y-3">
+                                  <div className="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                    <h6 className="font-semibold text-foreground mb-2">Detection Methods:</h6>
                                     <ul className="text-sm text-muted-foreground space-y-1">
-                                      <li>• Facial detection and visibility monitoring</li>
-                                      <li>• Emotion recognition using CNN</li>
-                                      <li>• Content analysis with NLP</li>
-                                      <li>• Cross-modal analysis</li>
-                                      <li>• Comprehensive reporting</li>
+                                      <li>• Primary: MediaPipe Face Detection</li>
+                                      <li>• Fallback: Haar Cascade (OpenCV)</li>
+                                      <li>• Confidence threshold: 50%</li>
+                                      <li>• Minimum face size: 60×60 pixels</li>
                                     </ul>
                                   </div>
-                                  <div>
-                                    <h6 className="font-semibold text-foreground mb-2">Technical Features:</h6>
+                                  <div className="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                    <h6 className="font-semibold text-foreground mb-2">Preprocessing:</h6>
                                     <ul className="text-sm text-muted-foreground space-y-1">
-                                      <li>• OpenCV for face recognition</li>
-                                      <li>• Transfer learning (VGG16/ResNet)</li>
-                                      <li>• Speech-to-text conversion</li>
-                                      <li>• Cultural bias reduction</li>
-                                      <li>• PDF export functionality</li>
+                                      <li>• Face crop with 6% padding</li>
+                                      <li>• Resize to 48×48 pixels</li>
+                                      <li>• Grayscale conversion</li>
+                                      <li>• Normalize to [0, 1] range</li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div className="space-y-3">
+                                  <div className="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                    <h6 className="font-semibold text-foreground mb-2">Video Processing:</h6>
+                                    <ul className="text-sm text-muted-foreground space-y-1">
+                                      <li>• Sample rate: 3 FPS (default)</li>
+                                      <li>• EMA smoothing: α = 0.6</li>
+                                      <li>• Confidence gate: ≥35%</li>
+                                      <li>• Timeline tracking per frame</li>
+                                    </ul>
+                                  </div>
+                                  <div className="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                    <h6 className="font-semibold text-foreground mb-2">Dataset:</h6>
+                                    <ul className="text-sm text-muted-foreground space-y-1">
+                                      <li>• FER2013 Dataset</li>
+                                      <li>• 30,000 training samples</li>
+                                      <li>• 2,300 test samples</li>
+                                      <li>• 7 emotion categories</li>
                                     </ul>
                                   </div>
                                 </div>
                               </div>
                             </div>
 
-                            {/* Implementation Strategy */}
+                          
+                            {/* Training Details */}
                             <div>
                               <h5 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                                <Settings className="h-5 w-5 text-purple-500" />
-                                Implementation Strategy
+                                <BarChart3 className="h-5 w-5 text-purple-500" />
+                                Model Training
                               </h5>
-                              <div className="space-y-4">
-                                <div className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
-                                  <h6 className="font-semibold text-foreground mb-2">Phase 1: Data Collection</h6>
-                  <p className="text-sm text-muted-foreground">
-                                    Systematic data collection through classroom observations, questionnaires, and focus groups 
-                                    to understand unique challenges Sri Lankan students face in emotional delivery.
-                                  </p>
-                  </div>
-                                <div className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
-                                  <h6 className="font-semibold text-foreground mb-2">Phase 2: Model Development</h6>
-                  <p className="text-sm text-muted-foreground">
-                                    CNN training with transfer learning, image preprocessing, and local dataset integration 
-                                    to reduce cultural bias and improve accuracy.
-                                  </p>
-                  </div>
-                                <div className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
-                                  <h6 className="font-semibold text-foreground mb-2">Phase 3: Integration & Deployment</h6>
-                  <p className="text-sm text-muted-foreground">
-                                    Iterative development cycle with prototyping, pilot testing, and large-scale deployment 
-                                    in university training environments.
-                                  </p>
+                              <div className="grid md:grid-cols-3 gap-3">
+                                <div className="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                  <h6 className="font-semibold text-foreground mb-2">Hyperparameters:</h6>
+                                  <ul className="text-xs text-muted-foreground space-y-1">
+                                    <li>• Optimizer: Adam</li>
+                                    <li>• Learning rate: 0.001</li>
+                                    <li>• Batch size: 64</li>
+                                    <li>• Epochs: 40</li>
+                                  </ul>
+                                </div>
+                                <div className="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                  <h6 className="font-semibold text-foreground mb-2">Data Augmentation:</h6>
+                                  <ul className="text-xs text-muted-foreground space-y-1">
+                                    <li>• Rotation: ±10°</li>
+                                    <li>• Shift: ±10% (w/h)</li>
+                                    <li>• Zoom: disabled</li>
+                                    <li>• Flip: disabled</li>
+                                  </ul>
+                                </div>
+                                <div className="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                  <h6 className="font-semibold text-foreground mb-2">Regularization:</h6>
+                                  <ul className="text-xs text-muted-foreground space-y-1">
+                                    <li>• ReduceLROnPlateau</li>
+                                    <li>• Layer-wise Dropout</li>
+                                    <li>• BatchNormalization</li>
+                                    <li>• Early stopping</li>
+                                  </ul>
                                 </div>
                               </div>
                             </div>
@@ -760,10 +975,12 @@ const MethodologySection = () => {
                               </h5>
                               <div className="bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-4 rounded-lg">
                                 <ul className="space-y-2 text-sm text-muted-foreground">
-                                  <li>• First emotionally-aware presentation analyzer for Sri Lankan context</li>
-                                  <li>• Cross-modal analysis combining facial expressions with content semantics</li>
-                                  <li>• Cultural adaptation and localized training for authentic feedback</li>
-                                  <li>• Comprehensive reporting system with actionable insights</li>
+                                  <li>• First real-time emotion-aware presentation analyzer using CNN with FER2013 dataset</li>
+                                  <li>• Advanced coaching metrics: Engagement Score, Shannon Entropy, Label Switch Rate</li>
+                                  <li>• Dual face detection (MediaPipe + Haar Cascade) for robust performance</li>
+                                  <li>• EMA smoothing for stable emotion tracking across video frames</li>
+                                  <li>• Contextual feedback with specific moments to review (neutral spans, negative spikes)</li>
+                                  <li>• Annotated video output with emotion labels overlaid on presenter's face</li>
                                 </ul>
                               </div>
                             </div>
@@ -792,7 +1009,7 @@ const MethodologySection = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-secondary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                     <Target className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground group-hover:text-brand-primary transition-colors">Research Methodology Summary</h3>
+                  <h3 className="text-2xl font-bold text-foreground group-hover:text-brand-primary dark:group-hover:text-white transition-colors">Research Methodology Summary</h3>
                     </div>
                 <p className="text-muted-foreground text-lg leading-relaxed max-w-4xl mx-auto text-center group-hover:text-foreground transition-colors">
                   SPEAKRAFT's methodology integrates advanced AI technologies with culturally relevant training approaches, 
