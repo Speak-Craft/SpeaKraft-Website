@@ -169,8 +169,8 @@ const ResearchProblemSection = () => {
                       <CheckCircle className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-foreground group-hover:text-brand-primary transition-colors">Our Solution: SPEAKRAFT</h3>
-                      <p className="text-brand-primary text-sm font-medium">Holistic AI-powered presentation training</p>
+                      <h3 className="text-2xl font-bold text-foreground group-hover:text-emerald-500 transition-colors">Our Solution: SPEAKRAFT</h3>
+                      <p className="text-brand-secondary text-sm font-medium">Holistic AI-powered presentation training</p>
                     </div>
                   </div>
                   

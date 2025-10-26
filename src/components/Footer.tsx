@@ -26,7 +26,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Github, href: "https://github.com/Speak-Craft", label: "GitHub" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/sammani-vishara-724442279/", label: "LinkedIn" }
+    { icon: Linkedin, href: "https://www.linkedin.com/in/sammani-vishara-148a03389/", label: "LinkedIn" }
   ];
 
   return (
@@ -43,9 +43,6 @@ const Footer = () => {
             <div className="lg:col-span-1">
               <div className="flex items-center gap-2 mb-3 animate-fade-in-up">
                 <img src={logo} alt="SpeaKraft" className="h-8 w-auto" />
-                <span className="text-lg font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-                  SpeaKraft
-                </span>
               </div>
               
               <p className="text-white/70 text-xs leading-relaxed mb-4 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
