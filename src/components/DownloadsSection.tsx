@@ -113,7 +113,7 @@ const DownloadsSection = () => {
           
           {/* Content */}
           <div className="flex-1">
-            <h3 className="text-lg font-bold text-foreground mb-2 line-clamp-2 group-hover:text-brand-primary transition-colors duration-300">
+            <h3 className="text-lg font-bold text-foreground mb-2 line-clamp-2 group-hover:text-brand-primary dark:group-hover:text-white transition-colors duration-300">
               {item.title}
             </h3>
             
