@@ -136,7 +136,7 @@ const MilestonesSection = () => {
                           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                             <div className="flex-1">
                               <div className="flex items-center gap-3 mb-3">
-                                <h3 className="text-xl lg:text-2xl font-bold text-foreground group-hover:text-brand-primary transition-colors duration-300">
+                                <h3 className="text-xl lg:text-2xl font-bold text-foreground group-hover:text-brand-primary dark:group-hover:text-white transition-colors duration-300">
                                   {milestone.title}
                                 </h3>
                                 <Badge className="gradient-primary text-white px-3 py-1 rounded-full text-sm font-medium">

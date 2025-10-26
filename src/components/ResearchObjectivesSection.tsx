@@ -215,7 +215,7 @@ const ResearchObjectivesSection = () => {
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
                     <div className={`w-12 h-12 bg-brand-primary/10 dark:bg-brand-primary/20 rounded-lg flex items-center justify-center`}>
-                      <currentObjective.icon className={`h-6 w-6 text-brand-primary`} />
+                      <currentObjective.icon className={`h-6 w-6 text-brand-primary dark:text-white`} />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-foreground mb-2">{currentObjective.title}</h3>
@@ -238,7 +238,7 @@ const ResearchObjectivesSection = () => {
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
                         <div className={`w-10 h-10 bg-brand-primary/10 dark:bg-brand-primary/20 rounded-lg flex items-center justify-center flex-shrink-0`}>
-                          <item.icon className="h-5 w-5 text-brand-primary" />
+                          <item.icon className="h-5 w-5 text-brand-primary dark:text-white" />
                         </div>
                         <div>
                           <h4 className="text-lg font-bold text-foreground mb-2">{item.title}</h4>

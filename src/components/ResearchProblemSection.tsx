@@ -100,7 +100,7 @@ const ResearchProblemSection = () => {
                       <AlertTriangle className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-foreground group-hover:text-red-500 transition-colors">The Problem</h3>
+                      <h3 className="text-2xl font-bold text-foreground group-hover:text-red-500 dark:group-hover:text-white transition-colors">The Problem</h3>
                       <p className="text-red-600 dark:text-red-400 text-sm font-medium">Critical gaps in presentation training</p>
                     </div>
                   </div>
@@ -117,7 +117,7 @@ const ResearchProblemSection = () => {
                           <span className="text-white text-xs font-bold">1</span>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-red-500 transition-colors">Inconsistent Feedback</h4>
+                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-red-500 dark:group-hover:text-white transition-colors">Inconsistent Feedback</h4>
                           <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Traditional methods are subjective and unreliable</p>
                         </div>
                       </div>
@@ -127,7 +127,7 @@ const ResearchProblemSection = () => {
                           <span className="text-white text-xs font-bold">2</span>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-red-500 transition-colors">Cultural Barriers</h4>
+                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-red-500 dark:group-hover:text-white transition-colors">Cultural Barriers</h4>
                           <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Global AI trainers miss local linguistic needs</p>
                         </div>
                       </div>
@@ -139,7 +139,7 @@ const ResearchProblemSection = () => {
                           <span className="text-white text-xs font-bold">3</span>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-red-500 transition-colors">Fragmented Approach</h4>
+                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-red-500 dark:group-hover:text-white transition-colors">Fragmented Approach</h4>
                           <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Platforms focus on isolated aspects only</p>
                         </div>
                       </div>
@@ -149,7 +149,7 @@ const ResearchProblemSection = () => {
                           <span className="text-white text-xs font-bold">4</span>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-red-500 transition-colors">Accent Recognition</h4>
+                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-red-500 dark:group-hover:text-white transition-colors">Accent Recognition</h4>
                           <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Poor accuracy for Sri Lankan speech patterns</p>
                         </div>
                       </div>
@@ -169,7 +169,7 @@ const ResearchProblemSection = () => {
                       <CheckCircle className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-foreground group-hover:text-emerald-500 transition-colors">Our Solution: SPEAKRAFT</h3>
+                      <h3 className="text-2xl font-bold text-foreground group-hover:text-emerald-500 dark:group-hover:text-white transition-colors">Our Solution: SPEAKRAFT</h3>
                       <p className="text-brand-secondary text-sm font-medium">Holistic AI-powered presentation training</p>
                     </div>
                   </div>
@@ -186,7 +186,7 @@ const ResearchProblemSection = () => {
                           <Mic className="h-4 w-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-red-500 transition-colors">Filler Word Detection</h4>
+                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-red-500 dark:group-hover:text-white transition-colors">Filler Word Detection</h4>
                           <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Guides students to speak more fluently</p>
                         </div>
                       </div>
@@ -196,7 +196,7 @@ const ResearchProblemSection = () => {
                           <BarChart3 className="h-4 w-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-blue-500 transition-colors">Speech Pacing</h4>
+                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-blue-500 dark:group-hover:text-white transition-colors">Speech Pacing</h4>
                           <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Monitors irregular acceleration and pauses</p>
                         </div>
                       </div>
@@ -208,7 +208,7 @@ const ResearchProblemSection = () => {
                           <Volume2 className="h-4 w-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-green-500 transition-colors">Vocal Loudness</h4>
+                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-green-500 dark:group-hover:text-white transition-colors">Vocal Loudness</h4>
                           <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Ensures clarity and consistent projection</p>
                         </div>
                       </div>
@@ -218,7 +218,7 @@ const ResearchProblemSection = () => {
                           <Eye className="h-4 w-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-purple-500 transition-colors">Emotional Tracking</h4>
+                          <h4 className="font-semibold text-foreground mb-1 group-hover:text-purple-500 dark:group-hover:text-white transition-colors">Emotional Tracking</h4>
                           <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Monitors facial expressions for engagement</p>
                         </div>
                       </div>
@@ -274,7 +274,7 @@ const ResearchProblemSection = () => {
                     <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform shadow-lg">
                       <Users className="h-6 w-6 text-white" />
                     </div>
-                    <h5 className="font-semibold text-foreground group-hover:text-green-500 transition-colors">Localized Training</h5>
+                    <h5 className="font-semibold text-foreground group-hover:text-green-500 dark:group-hover:text-white transition-colors">Localized Training</h5>
                     <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Sri Lankan accent recognition</p>
                   </CardContent>
                 </Card>
@@ -285,7 +285,7 @@ const ResearchProblemSection = () => {
                     <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform shadow-lg">
                       <Brain className="h-6 w-6 text-white" />
                     </div>
-                    <h5 className="font-semibold text-foreground group-hover:text-purple-500 transition-colors">Holistic Analysis</h5>
+                    <h5 className="font-semibold text-foreground group-hover:text-purple-500 dark:group-hover:text-white transition-colors">Holistic Analysis</h5>
                     <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Multimodal feedback system</p>
                   </CardContent>
                 </Card>
@@ -301,7 +301,7 @@ const ResearchProblemSection = () => {
                     <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                       <Star className="h-5 w-5 text-white" />
                     </div>
-                    <h4 className="text-lg font-bold text-foreground group-hover:text-green-500 transition-colors">Why SPEAKRAFT?</h4>
+                    <h4 className="text-lg font-bold text-foreground group-hover:text-green-500 dark:group-hover:text-white transition-colors">Why SPEAKRAFT?</h4>
                   </div>
                   <p className="text-muted-foreground text-sm mb-4 group-hover:text-foreground transition-colors">
                     Unlike existing platforms that focus on isolated aspects, SPEAKRAFT provides comprehensive evaluation 
