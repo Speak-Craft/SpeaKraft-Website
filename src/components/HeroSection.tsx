@@ -1,11 +1,13 @@
 import { Play, Brain, Mic, Users, Sparkles, Monitor, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useState, useEffect } from 'react';
 import loginImage from '@/assets/login.png';
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -127,6 +129,7 @@ const HeroSection = () => {
                 <Button
                   size="lg"
                   className="bg-white text-brand-primary hover:bg-white/90 px-8 py-4 text-lg font-semibold shadow-glow transition-all duration-300 hover:scale-110 hover:shadow-2xl group"
+                  onClick={() => setIsVideoOpen(true)}
                 >
                   <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                   Watch Demo
@@ -216,6 +219,38 @@ const HeroSection = () => {
           <path d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z" fill="url(#waveGradient)" />
         </svg>
       </div>
+
+      {/* Video Demo Modal - Fully Responsive */}
+      <Dialog open={isVideoOpen} onOpenChange={setIsVideoOpen}>
+        <DialogContent className="max-w-4xl w-[95vw] max-h-[90vh] p-0 gap-0 overflow-hidden">
+          <DialogHeader className="p-4 sm:p-6 pb-3 sm:pb-4">
+            <DialogTitle className="text-xl sm:text-2xl font-bold text-foreground">
+              SpeaKraft Demo Video
+            </DialogTitle>
+          </DialogHeader>
+          <div className="relative w-full pb-[56.25%] bg-black">
+            {/* 16:9 Aspect Ratio Container for responsive video */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="SpeaKraft Demo Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                style={{
+                  border: 'none',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%'
+                }}
+              />
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

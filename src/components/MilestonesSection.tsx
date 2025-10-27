@@ -103,10 +103,7 @@ const MilestonesSection = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <div className="inline-flex items-center justify-center w-16 h-16 gradient-primary rounded-2xl mb-6 shadow-glow">
-              <Award className="h-8 w-8 text-white" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Project Milestones
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">

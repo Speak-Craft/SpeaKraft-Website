@@ -60,11 +60,6 @@ const ResearchProblemSection = () => {
         <div className="max-w-none mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 animate-fade-in-up">
-              <AlertTriangle className="h-6 w-6 text-red-500 animate-pulse" />
-              <span className="text-red-500 font-semibold text-lg">Research Challenge</span>
-              <AlertTriangle className="h-6 w-6 text-red-500 animate-pulse" />
-            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <span className="bg-gradient-to-r from-red-500 via-orange-500 to-brand-primary bg-clip-text text-transparent">
               Research Problem & Solution

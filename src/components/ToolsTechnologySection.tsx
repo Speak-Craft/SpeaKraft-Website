@@ -358,15 +358,8 @@ const ToolsTechnologySection = () => {
         <div className="max-w-none mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 animate-fade-in-up">
-              <Sparkles className="h-6 w-6 text-brand-primary dark:text-white animate-pulse" />
-              <span className="text-brand-primary dark:text-white font-semibold text-lg">Technology Stack</span>
-              <Sparkles className="h-6 w-6 text-brand-primary dark:text-white animate-pulse" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <span className="bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent bg-clip-text text-transparent">
-                Tools & Technologies
-              </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Tools and Technologies
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               Our comprehensive technology stack combines cutting-edge frameworks, robust databases, 

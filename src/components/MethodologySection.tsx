@@ -206,15 +206,9 @@ const MethodologySection = () => {
         <div className="max-w-none mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 animate-fade-in-up">
-              <Sparkles className="h-6 w-6 text-brand-primary animate-pulse" />
-              <span className="text-brand-primary font-semibold text-lg">Advanced AI Methodology</span>
-              <Sparkles className="h-6 w-6 text-brand-primary animate-pulse" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <span className="bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent bg-clip-text text-transparent">
+           
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Methodology
-              </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-5xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               SPEAKRAFT's comprehensive approach combines cutting-edge AI technologies with proven educational methodologies 
@@ -264,7 +258,7 @@ const MethodologySection = () => {
                   </div>
                   <div className="flex items-center gap-2 group-hover:translate-x-2 transition-transform" style={{ transitionDelay: '0.2s' }}>
                     <Badge variant="secondary" className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white animate-pulse" style={{ animationDelay: '1s' }}>Backend Layer</Badge>
-                    <span className="text-sm text-muted-foreground">Spring Boot with ML models and database</span>
+                    <span className="text-sm text-muted-foreground">Node.js with MongoDB and Gemini API</span>
                   </div>
                     </div>
               </CardContent>
@@ -311,13 +305,8 @@ const MethodologySection = () => {
           {/* Technical Overview */}
           <div className="mb-16">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 mb-4">
-                <Activity className="h-6 w-6 text-brand-accent animate-pulse" />
-                <span className="text-brand-accent font-semibold text-lg">Technical Implementation</span>
-                <Activity className="h-6 w-6 text-brand-accent animate-pulse" style={{ animationDelay: '0.5s' }} />
-              </div>
               <h3 className="text-3xl font-bold text-foreground mb-4">
-                <span className="bg-gradient-to-r from-brand-accent via-brand-primary to-brand-secondary bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-brand-accent via-brand-secondary to-brand-secondary bg-clip-text text-transparent">
                   Technical Implementation Overview
                 </span>
               </h3>
