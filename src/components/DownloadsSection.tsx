@@ -51,7 +51,7 @@ const DownloadsSection = () => {
       date: "2024-12-10",
       size: "1.7 MB",
       driveLink: "https://drive.google.com/drive/folders/1MpwKLgsenJdQl3AXL_ugwGD4kebtTe18?usp=sharing",
-      category: "group"
+      category: "individual"
     },
     {
       title: "Checklist 1",
