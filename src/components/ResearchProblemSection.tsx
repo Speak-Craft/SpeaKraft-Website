@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Play, Pause, Volume2, AlertTriangle, CheckCircle, Sparkles, Zap, Target, Brain, ArrowRight, Star, TrendingUp, Users, Mic, Eye, BarChart3 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Volume2, AlertTriangle, CheckCircle, Brain, Star, Users, Mic, Eye, BarChart3 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import dashboardImage from '@/assets/Dashboard.png';
+import { ExternalLink } from 'lucide-react';
 
 const ResearchProblemSection = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  
+  // Google Drive video link
+  const driveVideoUrl = "https://drive.google.com/file/d/1q_nKDPpjx1vbmWoHJQr2sdwBwtnAVOi6/view?usp=sharing";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -233,28 +236,35 @@ const ResearchProblemSection = () => {
                     <div className="absolute top-4 right-4 w-16 h-16 bg-white/10 rounded-full blur-lg animate-pulse group-hover:scale-150 transition-transform duration-1000" />
                     <div className="absolute bottom-4 left-4 w-12 h-12 bg-white/10 rounded-full blur-lg animate-pulse group-hover:scale-150 transition-transform duration-1000" style={{ animationDelay: '0.5s' }} />
                     
-                    <div className="aspect-video bg-gradient-to-br from-brand-primary/30 to-brand-accent/30 flex items-center justify-center relative z-10">
-                      {/* Placeholder for demo video */}
-                      <div className="text-center p-8">
-                        <div className="w-24 h-24 bg-white/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-2xl">
-                          {isPlaying ? (
-                            <Pause className="h-12 w-12 text-white" />
-                          ) : (
-                            <Play className="h-12 w-12 text-white ml-1" />
-                          )}
+                    {/* Clickable Video Thumbnail with Play Button */}
+                    <div 
+                      className="relative z-10 cursor-pointer group-hover:scale-[1.02] transition-transform duration-300"
+                      onClick={() => window.open(driveVideoUrl, '_blank')}
+                    >
+                      {/* Video Thumbnail */}
+                      <div className="relative w-full overflow-hidden rounded-lg bg-gradient-to-br from-brand-primary/20 to-brand-accent/20" style={{ aspectRatio: '16/9' }}>
+                        <img 
+                          src={dashboardImage} 
+                          alt="SpeaKraft Demo Video" 
+                          className="w-full h-full object-cover"
+                        />
+                        
+                        {/* Play Button Overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-all duration-300">
+                          <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+                            <svg className="h-12 w-12 text-brand-primary ml-1" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z" />
+                            </svg>
+                          </div>
                         </div>
-                        <h4 className="text-xl font-semibold text-white mb-2 group-hover:text-yellow-200 transition-colors">
-                          Project Demonstration
-                        </h4>
-                        <p className="text-white/90 text-sm mb-4 group-hover:text-white transition-colors">
-                          Watch how SpeaKraft transforms presentation training
-                        </p>
-                        <Button
-                          onClick={() => setIsPlaying(!isPlaying)}
-                          className="bg-white text-brand-primary hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                        >
-                          {isPlaying ? 'Pause Demo' : 'Play Demo'}
-                        </Button>
+                        
+                        {/* Video Info Overlay */}
+                        <div className="absolute bottom-4 left-4 right-4 text-white">
+                          <div className="flex items-center gap-2 bg-black/50 backdrop-blur-sm rounded-lg px-4 py-2">
+                            <ExternalLink className="h-4 w-4" />
+                            <span className="text-sm font-medium">View on Google Drive</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
