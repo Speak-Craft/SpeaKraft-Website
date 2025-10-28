@@ -8,7 +8,7 @@ const ResearchProblemSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   
   // Google Drive video link
-  const driveVideoUrl = "https://drive.google.com/file/d/1q_nKDPpjx1vbmWoHJQr2sdwBwtnAVOi6/view?usp=sharing";
+  const driveVideoUrl = "https://drive.google.com/file/d/1FUVsGyq9JkUH0QBCw2CutpClB7rSOC7-/view?usp=sharing";
 
   useEffect(() => {
     const observer = new IntersectionObserver(

@@ -49,8 +49,24 @@ const DownloadsSection = () => {
       title: "Log Book",
       type: "PDF Document",
       date: "2024-12-10",
-      size: "TBD",
+      size: "1.7 MB",
       driveLink: "https://drive.google.com/drive/folders/1MpwKLgsenJdQl3AXL_ugwGD4kebtTe18?usp=sharing",
+      category: "group"
+    },
+    {
+      title: "Checklist 1",
+      type: "GitHub README File",
+      date: "2025-04-30",
+      size: "8 KB",
+      driveLink: "https://drive.google.com/drive/folders/1HE87Z8HimzAaTSkccfbdm4TF4-Hh00cu?usp=sharing",
+      category: "group"
+    },
+    {
+      title: "Checklist 2",
+      type: "Excel File",
+      date: "2025-09-15",
+      size: "26 KB",
+      driveLink: "https://drive.google.com/drive/folders/1oIM56Zsg9vDcYF4JH9KGiA0k-m0R95h6?usp=sharing",
       category: "group"
     }
   ];
