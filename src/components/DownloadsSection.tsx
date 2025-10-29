@@ -100,7 +100,7 @@ const DownloadsSection = () => {
       title: "Final Presentation",
       type: "PowerPoint Presentation",
       date: "2024-12-05",
-      size: "TBD",
+      size: "33.4 MB",
       driveLink: "https://drive.google.com/drive/folders/1kDOJEyeC3hoDjzTWGVSiuKe0kmJh6ICC?usp=sharing",
       category: "group"
     }
