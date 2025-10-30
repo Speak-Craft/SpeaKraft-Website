@@ -49,7 +49,7 @@ const DownloadsSection = () => {
       title: "Log Book",
       type: "PDF Document",
       date: "2024-12-10",
-      size: "1.7 MB",
+      size: "40.1 MB",
       driveLink: "https://drive.google.com/drive/folders/1MpwKLgsenJdQl3AXL_ugwGD4kebtTe18?usp=sharing",
       category: "individual"
     },
