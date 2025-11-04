@@ -192,7 +192,7 @@ const ContactSection = () => {
                   
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
                         <MapPin className="h-6 w-6 text-white" />
                       </div>
                       <div>
@@ -206,7 +206,7 @@ const ContactSection = () => {
                     </div>
                     
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 gradient-accent rounded-lg flex items-center justify-center flex-shrink-0">
                         <Phone className="h-6 w-6 text-white" />
                       </div>
                       <div>
@@ -216,7 +216,7 @@ const ContactSection = () => {
                     </div>
                     
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
                         <Mail className="h-6 w-6 text-white" />
                       </div>
                       <div>
